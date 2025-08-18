@@ -1,0 +1,41 @@
+{
+  "name": "aitrak-daycare-mvp",
+  "version": "1.0.0",
+  "description": "아이뜨락 어린이집 - Firebase 기반 MVP 웹앱",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "python -m http.server 8000",
+    "serve": "npx serve .",
+    "deploy": "vercel",
+    "deploy:prod": "vercel --prod"
+  },
+  "keywords": [
+    "아이뜨락",
+    "어린이집",
+    "daycare",
+    "kindergarten",
+    "PWA",
+    "childcare",
+    "education",
+    "firebase",
+    "수원"
+  ],
+  "author": "바이브코딩 (VibeCodinc)",
+  "license": "MIT",
+  "dependencies": {
+    "firebase": "^10.12.2"
+  },
+  "devDependencies": {
+    "serve": "^14.0.0",
+    "vercel": "^32.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/aitrak-daycare-mvp.git"
+  },
+  "homepage": "https://aitrak-daycare-mvp.vercel.app",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
