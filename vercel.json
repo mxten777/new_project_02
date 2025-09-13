@@ -3,16 +3,14 @@
   "github": {
     "enabled": false
   },
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/dist/(.*)", "dest": "/dist/$1" },
-    { "src": "/(.*)", "dest": "/$1" }
-  ],
   "builds": [
     {
       "src": "**/*",
       "use": "@vercel/static"
     }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/$1" }
   ],
   "headers": [
     {

@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌟 아이뜨락 어린이집 - 사랑과 성장이 함께하는 곳</title>
+  <link rel="canonical" href="https://aitrak-daycare-mvp.vercel.app/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#ff6b6b" />
+  
+  <!-- 페이지 로드 성능을 위한 preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://dapi.kakao.com" crossorigin />
+  
+  <!-- 메타 정보 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="아이뜨락 어린이집 - 사랑과 성장이 함께하는 곳" />
+  <meta property="og:description" content="사랑과 성장이 함께하는 아이뜨락 어린이집. 수원에서 아이들의 꿈과 가능성을 키우는 신뢰받는 보육시설입니다." />
+  <meta property="og:url" content="https://aitrak-daycare-mvp.vercel.app/" />
+  <meta property="og:site_name" content="아이뜨락 어린이집" />
+  <meta property="og:image" content="/image/sample_img_03.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="아이뜨락 어린이집 - 사랑과 성장이 함께하는 곳" />
+  <meta name="twitter:description" content="사랑과 성장이 함께하는 아이뜨락 어린이집. 수원에서 아이들의 꿈과 가능성을 키우는 신뢰받는 보육시설입니다." />
+  <meta name="twitter:image" content="/image/sample_img_03.jpg" />
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" as="image" href="/image/sample_img_03.jpg" imagesrcset="/image/sample_img_03.jpg 1x" />
+  <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" crossorigin />
+  <link rel="preload" as="style" href="./dist/output.css" />
+  <link rel="preload" as="script" href="optimizer.js" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./dist/output.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="optimization.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" data-defer="true" />
+  
+  <!-- PWA 매니페스트 -->
+  <link rel="manifest" href="manifest.json" />
+  
+  <style>
+    /* Tailwind 커스텀 애니메이션 유틸리티 */
+    .animate-fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+    }
+    .animate-in {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-900 bg-white dark:bg-gray-900 dark:text-white transition-colors duration-300">
+  <!-- 다크모드 토글 버튼 -->
+  <button id="darkModeToggle" aria-label="다크모드 전환" class="fixed top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/80 dark:bg-gray-800/80 shadow-lg flex items-center justify-center text-2xl text-primary dark:text-yellow-300 border border-primary/20 dark:border-yellow-300/30 transition-colors duration-300 hover:bg-primary/10 dark:hover:bg-gray-700/80">
+    <i id="darkModeIcon" class="fas fa-moon"></i>
+  </button>
+
+  <!-- 웹 컴포넌트 사용 -->
+  <header-component></header-component>
+  <hero-component></hero-component>
+  <about-component></about-component>
+  <programs-component></programs-component>
+  <teachers-component></teachers-component>
+  <facilities-component></facilities-component>
+  <testimonial-slider-component></testimonial-slider-component>
+  <contact-component></contact-component>
+  <footer-component></footer-component>
+
+  <!-- 플로팅 버튼 -->
+  <div class="floating-buttons fixed bottom-28 right-6 flex flex-col gap-3 z-50">
+    <a href="tel:031-123-4567" class="btn-floating bg-primary hover:bg-primary-dark dark:bg-yellow-300 dark:hover:bg-yellow-400 text-white dark:text-gray-900 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" aria-label="전화하기">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+    <a href="#" class="btn-floating bg-white dark:bg-gray-800 text-primary dark:text-yellow-300 border-2 border-primary dark:border-yellow-300 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" aria-label="맨 위로 이동" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+  </div>
+
+  <!-- 스크립트 -->
+  <script type="module" src="components/component-manager.js"></script>
+  <script src="js/page-optimizer.js"></script>
+  <script src="js/image-optimizer.js" defer></script>
+  <script src="js/testimonial-slider.js" defer></script>
+  <script src="script.js" defer></script>
+  
+  <!-- 서비스 워커 등록 -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('ServiceWorker registered with scope:', registration.scope);
+          })
+          .catch(error => {
+            console.error('ServiceWorker registration failed:', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
+      <section id="contact" class="relative py-24 bg-gradient-to-br from-white via-[#f8f9fa] to-background overflow-hidden">
+        <!-- 상단 곡선 SVG Divider -->
+        <div class="absolute -top-1 left-0 w-full overflow-hidden leading-none z-10" aria-hidden="true">
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-20">
+            <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="url(#contact-top)"/>
+            <defs>
+              <linearGradient id="contact-top" x1="0" y1="0" x2="1440" y2="80" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#f8f9fa"/>
+                <stop offset="1" stop-color="#fff"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="max-w-6xl mx-auto px-4 relative z-20">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-accent drop-shadow-lg tracking-tight">상담 및 문의</h2>
+            <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium">궁금한 것이 있으시면 언제든지 연락주세요</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <!-- 연락처 정보 -->
+            <div class="group relative rounded-3xl shadow-2xl border-2 border-accent/20 bg-gradient-to-br from-accent/90 via-primary/80 to-white/90 p-10 pt-16 transition-all duration-300 hover:-translate-y-3 hover:shadow-3xl hover:scale-105 animate-fade-in overflow-visible">
+              <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-accent to-primary shadow-lg text-white text-3xl border-4 border-white group-hover:scale-110 transition-transform">
+                <i class="fas fa-phone"></i>
+              </div>
+              <h4 class="font-bold text-2xl text-accent mb-2">전화 문의</h4>
+              <p class="text-gray-800 text-lg mb-1">02-1234-5678</p>
+              <small class="text-xs text-gray-500">평일 08:00 - 18:00</small>
+              <div class="mt-8 flex items-center gap-4">
+                <span class="inline-flex items-center gap-2 text-secondary font-semibold"><i class="fas fa-map-marker-alt"></i> 서울시 강남구 테헤란로 123</span>
+              </div>
+              <div class="mt-2 flex items-center gap-2 text-xs text-gray-500"><i class="fas fa-subway"></i> 2호선 강남역 5번 출구 도보 3분</div>
+              <div class="mt-8 flex items-center gap-4">
+                <span class="inline-flex items-center gap-2 text-primary font-semibold"><i class="fas fa-envelope"></i> happy@daycare.co.kr</span>
+              </div>
+              <div class="mt-2 text-xs text-gray-500">24시간 문의 가능</div>
+            </div>
+            <!-- 상담 신청 폼 -->
+            <div class="group relative rounded-3xl shadow-2xl border-2 border-primary/20 bg-gradient-to-br from-primary/90 via-accent/80 to-white/90 p-10 pt-16 transition-all duration-300 hover:-translate-y-3 hover:shadow-3xl hover:scale-105 animate-fade-in overflow-visible">
+              <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent shadow-lg text-white text-3xl border-4 border-white group-hover:scale-110 transition-transform">
+                <i class="fas fa-paper-plane"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-6 text-primary drop-shadow">상담 신청</h3>
+              <form class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label for="parent-name" class="block font-semibold mb-1 text-gray-700">학부모 성함</label>
+                    <input type="text" id="parent-name" name="parent-name" required class="w-full rounded-lg border border-gray-300 focus:border-primary focus:ring-primary/30 px-4 py-2 outline-none" />
+                  </div>
+                  <div>
+                    <label for="child-age" class="block font-semibold mb-1 text-gray-700">아이 연령</label>
+                    <select id="child-age" name="child-age" required class="w-full rounded-lg border border-gray-300 focus:border-primary focus:ring-primary/30 px-4 py-2 outline-none">
+                      <option value="">선택하세요</option>
+                      <option value="만2세">만 2세</option>
+                      <option value="만3세">만 3세</option>
+                      <option value="만4세">만 4세</option>
+                      <option value="만5세">만 5세</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label for="phone" class="block font-semibold mb-1 text-gray-700">연락처</label>
+                    <input type="tel" id="phone" name="phone" required class="w-full rounded-lg border border-gray-300 focus:border-primary focus:ring-primary/30 px-4 py-2 outline-none" />
+                  </div>
+                  <div>
+                    <label for="preferred-time" class="block font-semibold mb-1 text-gray-700">희망 상담 시간</label>
+                    <select id="preferred-time" name="preferred-time" required class="w-full rounded-lg border border-gray-300 focus:border-primary focus:ring-primary/30 px-4 py-2 outline-none">
+                      <option value="">선택하세요</option>
+                      <option value="오전">오전 (09:00-12:00)</option>
+                      <option value="오후">오후 (13:00-17:00)</option>
+                      <option value="저녁">저녁 (17:00-19:00)</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label for="message" class="block font-semibold mb-1 text-gray-700">문의 내용</label>
+                  <textarea id="message" name="message" rows="4" placeholder="궁금한 내용을 자유롭게 작성해주세요" class="w-full rounded-lg border border-gray-300 focus:border-primary focus:ring-primary/30 px-4 py-2 outline-none"></textarea>
+                </div>
+                <button type="submit" class="w-full mt-2 py-3 rounded-lg bg-primary text-white font-bold text-lg flex items-center justify-center gap-2 shadow hover:bg-primary/90 transition"><i class="fas fa-paper-plane"></i> 상담 신청하기</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- 배경 장식 효과 및 하단 SVG Divider -->
+        <div class="pointer-events-none absolute inset-0 z-0">
+          <div class="absolute left-1/4 top-1/3 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+          <div class="absolute right-1/5 bottom-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-2xl"></div>
+        </div>
+        <div class="absolute -bottom-1 left-0 w-full overflow-hidden leading-none z-10" aria-hidden="true">
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-20">
+            <path d="M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z" fill="url(#contact-bottom)"/>
+            <defs>
+              <linearGradient id="contact-bottom" x1="0" y1="0" x2="1440" y2="80" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#fff"/>
+                <stop offset="1" stop-color="#f8f9fa"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </section>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="rounded-xl shadow-lg border border-secondary/10 bg-white/95 backdrop-blur p-8 text-center transition hover:-translate-y-2 hover:shadow-2xl">
+            <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent text-white text-3xl" aria-hidden="true">
+              <i class="fas fa-heart"></i>
+              <span class="sr-only">따뜻한 보살핌</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-gray-800">따뜻한 보살핌</h3>
+            <p class="text-gray-600">전문 보육교사들이 내 아이처럼 따뜻하게 돌봐드립니다</p>
+          </div>
+          <div class="rounded-xl shadow-lg border border-secondary/10 bg-white/95 backdrop-blur p-8 text-center transition hover:-translate-y-2 hover:shadow-2xl">
+            <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full bg-gradient-to-br from-secondary to-primary text-white text-3xl" aria-hidden="true">
+              <i class="fas fa-graduation-cap"></i>
+              <span class="sr-only">체계적인 교육</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-gray-800">체계적인 교육</h3>
+            <p class="text-gray-600">누리과정 기반의 체계적인 교육 프로그램을 운영합니다</p>
+          </div>
+          <div class="rounded-xl shadow-lg border border-secondary/10 bg-white/95 backdrop-blur p-8 text-center transition hover:-translate-y-2 hover:shadow-2xl">
+            <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white text-3xl" aria-hidden="true">
+              <i class="fas fa-shield-alt"></i>
+              <span class="sr-only">안전한 환경</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-gray-800">안전한 환경</h3>
+            <p class="text-gray-600">아이들이 안전하게 뛰어놀 수 있는 시설과 환경을 제공합니다</p>
+          </div>
+          <div class="rounded-xl shadow-lg border border-secondary/10 bg-white/95 backdrop-blur p-8 text-center transition hover:-translate-y-2 hover:shadow-2xl">
+            <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full bg-gradient-to-br from-secondary to-accent text-white text-3xl" aria-hidden="true">
+              <i class="fas fa-mobile-alt"></i>
+              <span class="sr-only">실시간 소통</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-gray-800">실시간 소통</h3>
+            <p class="text-gray-600">앱을 통해 아이의 하루 생활을 실시간으로 확인하세요</p>
+          </div>
+        </div>
+      </div>
+      <!-- 배경 장식 효과 -->
+      <div class="pointer-events-none absolute inset-0 z-0">
+        <div class="absolute left-1/4 top-1/3 w-72 h-72 bg-secondary/10 rounded-full blur-3xl"></div>
+        <div class="absolute right-1/5 bottom-1/4 w-80 h-80 bg-primary/10 rounded-full blur-2xl"></div>
+      </div>
+    </section>
+
+    <!-- Hero Section with SVG Curve & Asymmetry -->
+    <section id="hero" class="relative overflow-hidden min-h-[80vh] flex items-center bg-gradient-to-br from-primary/90 via-accent/70 to-secondary/80">
+      <!-- 곡선 SVG 배경 -->
+      <svg class="absolute top-0 left-0 w-full h-40 md:h-64 z-0" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#fff" fill-opacity="0.7" d="M0,160L60,154.7C120,149,240,139,360,154.7C480,171,600,213,720,197.3C840,181,960,107,1080,101.3C1200,96,1320,160,1380,192L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+      </svg>
+      <div class="relative z-10 max-w-6xl mx-auto px-4 py-24 flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1 text-center md:text-left">
+          <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white drop-shadow-lg leading-tight">
+            사랑과 <span class="text-yellow-300">성장</span>이<br class="hidden md:inline"/> 함께하는 <span class="text-secondary">아이뜨락</span>
+          </h1>
+          <p class="text-lg md:text-2xl text-white/90 mb-8 max-w-xl md:mx-0 mx-auto">아이들의 꿈과 가능성을 키우는 신뢰받는 어린이집</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <a href="#contact" class="px-8 py-4 rounded-full bg-yellow-300 text-primary font-bold text-lg shadow-lg hover:bg-yellow-400 transition transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary" role="button" aria-label="상담 신청하기">상담 신청하기</a>
+            <a href="#programs" class="px-8 py-4 rounded-full bg-white/80 text-primary font-bold text-lg shadow-lg hover:bg-white transition transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary" role="button" aria-label="프로그램 보기">프로그램 보기</a>
+          </div>
+        </div>
+        <div class="flex-1 flex justify-center md:justify-end items-center relative">
+          <img src="/image/sample_img_03.jpg" alt="행복한 아이들" class="w-72 h-72 md:w-96 md:h-96 object-cover rounded-full shadow-2xl border-8 border-white/80 bg-white/30" />
+            <img src="/image/sample_img_03.jpg" alt="행복한 아이들" class="w-72 h-72 md:w-96 md:h-96 object-cover rounded-full shadow-2xl border-8 border-white/80 bg-white/30" loading="lazy" />
+          <!-- 마스코트/일러스트 SVG -->
+          <svg class="absolute -bottom-8 -right-8 w-24 h-24 opacity-80" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="#fbbf24" stroke="#f59e42" stroke-width="4"/><ellipse cx="50" cy="60" rx="18" ry="8" fill="#fff"/><circle cx="40" cy="45" r="5" fill="#fff"/><circle cx="60" cy="45" r="5" fill="#fff"/></svg>
+        </div>
+      </div>
+      <!-- 곡선 SVG 구분선 -->
+      <svg class="absolute bottom-0 left-0 w-full h-24 md:h-32 z-0" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#f3f4f6" fill-opacity="1" d="M0,224L60,197.3C120,171,240,117,360,117.3C480,117,600,171,720,186.7C840,203,960,181,1080,154.7C1200,128,1320,96,1380,80L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+      </svg>
+    </section>
+
+    <!-- 소개 섹션 -->
+    <section id="about" class="relative py-20 bg-gradient-to-br from-white via-[#fafbff] to-background overflow-hidden">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">아이뜨락 어린이집을 소개합니다</h2>
+          <p class="text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">2015년 개원 이래 800여 명의 아이들과 함께 성장해온 신뢰받는 어린이집입니다</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="space-y-6">
+              <div class="flex items-start bg-background rounded-xl border-l-4 border-primary p-6 mb-2">
+                <div class="w-14 h-14 flex items-center justify-center rounded-full bg-primary text-white text-2xl mr-6 flex-shrink-0" aria-hidden="true">
+                  <i class="fas fa-users"></i>
+                  <span class="sr-only">경험 많은 교사진</span>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold mb-1 text-gray-800">경험 많은 교사진</h4>
+                  <p class="text-gray-600">평균 경력 8년 이상의 전문 보육교사들이 아이들을 돌봅니다</p>
+                </div>
+              </div>
+              <div class="flex items-start bg-background rounded-xl border-l-4 border-primary p-6 mb-2">
+                <div class="w-14 h-14 flex items-center justify-center rounded-full bg-primary text-white text-2xl mr-6 flex-shrink-0" aria-hidden="true">
+                  <i class="fas fa-award"></i>
+                  <span class="sr-only">인증받은 시설</span>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold mb-1 text-gray-800">인증받은 시설</h4>
+                  <p class="text-gray-600">국가에서 인증한 우수 보육시설로 안전하고 쾌적한 환경을 제공합니다</p>
+                </div>
+              </div>
+              <div class="flex items-start bg-background rounded-xl border-l-4 border-primary p-6">
+                <div class="w-14 h-14 flex items-center justify-center rounded-full bg-primary text-white text-2xl mr-6 flex-shrink-0" aria-hidden="true">
+                  <i class="fas fa-clock"></i>
+                  <span class="sr-only">연장보육 가능</span>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold mb-1 text-gray-800">연장보육 가능</h4>
+                  <p class="text-gray-600">오전 7시 30분부터 오후 7시 30분까지 연장보육을 지원합니다</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <div class="w-[320px] h-[240px] md:w-[350px] md:h-[260px] bg-white/10 rounded-2xl flex flex-col justify-center items-center text-center p-8 backdrop-blur border border-white/20">
+              <i class="fas fa-building text-5xl mb-4 opacity-70" aria-hidden="true"></i>
+              <span class="sr-only">어린이집 전경</span>
+              <p class="text-lg">어린이집 전경</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 배경 장식 효과 -->
+      <div class="pointer-events-none absolute inset-0 z-0">
+        <div class="absolute left-1/4 top-1/3 w-72 h-72 bg-secondary/10 rounded-full blur-3xl"></div>
+        <div class="absolute right-1/5 bottom-1/4 w-80 h-80 bg-primary/10 rounded-full blur-2xl"></div>
+      </div>
+    </section>
+
+    <!-- 프로그램 섹션 -->
+    <section id="programs" class="relative py-20 bg-gradient-to-br from-[#f7fafc] via-[#f5f7fa] to-background overflow-hidden section-animate">
+      <!-- 상단 곡선 SVG Divider -->
+      <div class="absolute -top-1 left-0 w-full overflow-hidden leading-none z-10" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-20">
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="url(#programs-top)"/>
+          <defs>
+            <linearGradient id="programs-top" x1="0" y1="0" x2="1440" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#f7fafc"/>
+              <stop offset="1" stop-color="#f5f7fa"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 relative z-20">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-primary drop-shadow-lg tracking-tight">다양한 교육 프로그램</h2>
+          <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium">아이들의 전인적 성장을 위한 특별한 프로그램들</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8 relative">
+          <!-- 음악 교육 카드 -->
+          <div class="group relative rounded-3xl shadow-2xl border-2 border-primary/20 bg-gradient-to-br from-primary/90 via-accent/80 to-white/90 p-10 pt-16 text-center transition-all duration-300 hover:-translate-y-3 hover:shadow-3xl hover:scale-105 animate-fade-in overflow-visible">
+            <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent shadow-lg text-white text-3xl border-4 border-white group-hover:scale-110 transition-transform" aria-hidden="true">
+              <i class="fas fa-music"></i>
+              <span class="sr-only">음악 교육</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-primary drop-shadow">음악 교육</h3>
+            <p class="text-gray-700 mb-4 font-medium">리듬감과 음감을 기르는 다양한 음악 활동</p>
+            <ul class="text-left text-gray-700 space-y-1 font-normal">
+              <li class="pl-6 relative before:content-[''] before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-primary/70 before:ring-2 before:ring-accent/60 before:shadow-md">악기 체험</li>
+              <li class="pl-6 relative before:content-[''] before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-primary/70 before:ring-2 before:ring-accent/60 before:shadow-md">율동 활동</li>
+              <li class="pl-6 relative before:content-[''] before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-primary/70 before:ring-2 before:ring-accent/60 before:shadow-md">동요 부르기</li>
+            </ul>
+          </div>
+          <!-- 미술 활동 카드 -->
+          <div class="group relative rounded-3xl shadow-2xl border-2 border-secondary/20 bg-gradient-to-br from-secondary/90 via-primary/80 to-white/90 p-10 pt-16 text-center transition-all duration-300 hover:-translate-y-3 hover:shadow-3xl hover:scale-105 animate-fade-in overflow-visible">
+            <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-secondary to-primary shadow-lg text-white text-3xl border-4 border-white group-hover:scale-110 transition-transform" aria-hidden="true">
+              <i class="fas fa-palette"></i>
+              <span class="sr-only">미술 활동</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-secondary drop-shadow">미술 활동</h3>
+            <p class="text-gray-700 mb-4 font-medium">창의력과 표현력을 기르는 미술 프로그램</p>
+            <ul class="text-left text-gray-700 space-y-1 font-normal">
+              <li class="pl-6 relative before:content-[''] before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-secondary/70 before:ring-2 before:ring-primary/60 before:shadow-md">그리기, 만들기</li>
+              <li class="pl-6 relative before:content-[''] before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-secondary/70 before:ring-2 before:ring-primary/60 before:shadow-md">점토 놀이</li>
+              <li class="pl-6 relative before:content-[''] before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-secondary/70 before:ring-2 before:ring-primary/60 before:shadow-md">협동 작품 활동</li>
+            </ul>
+          </div>
+          <!-- 체육 활동 카드 -->
+          <div class="group relative rounded-3xl shadow-2xl border-2 border-accent/20 bg-gradient-to-br from-accent/90 via-primary/80 to-white/90 p-10 pt-16 text-center transition-all duration-300 hover:-translate-y-3 hover:shadow-3xl hover:scale-105 animate-fade-in overflow-visible">
+            <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-accent to-primary shadow-lg text-white text-3xl border-4 border-white group-hover:scale-110 transition-transform" aria-hidden="true">
+              <i class="fas fa-running"></i>
+              <span class="sr-only">체육 활동</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-accent drop-shadow">체육 활동</h3>
+            <p class="text-gray-700 mb-4 font-medium">건강한 신체 발달을 위한 체육 프로그램</p>
+            <ul class="text-left text-gray-700 space-y-1 font-normal">
+              <li class="pl-6 relative before:content-[''] before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-accent/70 before:ring-2 before:ring-primary/60 before:shadow-md">실내외 놀이</li>
+              <li class="pl-6 relative before:content-[''] before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-accent/70 before:ring-2 before:ring-primary/60 before:shadow-md">체조, 율동</li>
+              <li class="pl-6 relative before:content-[''] before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-accent/70 before:ring-2 before:ring-primary/60 before:shadow-md">소근육 발달 놀이</li>
+            </ul>
+          </div>
+          <!-- 언어 교육 카드 -->
+          <div class="group relative rounded-3xl shadow-2xl border-2 border-primary/20 bg-gradient-to-br from-primary/90 via-secondary/80 to-white/90 p-10 pt-16 text-center transition-all duration-300 hover:-translate-y-3 hover:shadow-3xl hover:scale-105 animate-fade-in overflow-visible">
+            <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-secondary to-primary shadow-lg text-white text-3xl border-4 border-white group-hover:scale-110 transition-transform" aria-hidden="true">
+              <i class="fas fa-book"></i>
+              <span class="sr-only">언어 교육</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-secondary drop-shadow">언어 교육</h3>
+            <p class="text-gray-700 mb-4 font-medium">의사소통 능력과 언어 발달을 돕는 프로그램</p>
+            <ul class="text-left text-gray-700 space-y-1 font-normal">
+              <li class="pl-6 relative before:content-[''] before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-secondary/70 before:ring-2 before:ring-primary/60 before:shadow-md">동화 읽기</li>
+              <li class="pl-6 relative before:content-[''] before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-secondary/70 before:ring-2 before:ring-primary/60 before:shadow-md">말하기 연습</li>
+              <li class="pl-6 relative before:content-[''] before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-secondary/70 before:ring-2 before:ring-primary/60 before:shadow-md">한글 익히기</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- 배경 장식 효과 및 하단 SVG Divider -->
+      <div class="pointer-events-none absolute inset-0 z-0">
+        <div class="absolute left-1/4 top-1/3 w-72 h-72 bg-secondary/10 rounded-full blur-3xl"></div>
+        <div class="absolute right-1/5 bottom-1/4 w-80 h-80 bg-primary/10 rounded-full blur-2xl"></div>
+      </div>
+      <div class="absolute -bottom-1 left-0 w-full overflow-hidden leading-none z-10" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-20">
+          <path d="M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z" fill="url(#programs-bottom)"/>
+          <defs>
+            <linearGradient id="programs-bottom" x1="0" y1="0" x2="1440" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#f5f7fa"/>
+              <stop offset="1" stop-color="#f7fafc"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 시설 섹션 -->
+    <section id="facilities" class="relative py-24 bg-gradient-to-br from-white via-[#f8f9fa] to-background overflow-hidden section-animate">
+      <!-- 상단 곡선 SVG Divider -->
+      <div class="absolute -top-1 left-0 w-full overflow-hidden leading-none z-10" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-20">
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="url(#facilities-top)"/>
+          <defs>
+            <linearGradient id="facilities-top" x1="0" y1="0" x2="1440" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#f8f9fa"/>
+              <stop offset="1" stop-color="#fff"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 relative z-20">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-primary drop-shadow-lg tracking-tight">안전하고 쾌적한 시설</h2>
+          <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium">아이들이 마음껏 뛰어놀 수 있는 안전한 공간</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8 relative">
+          <!-- 교실 카드 -->
+          <div class="group relative rounded-3xl shadow-2xl border-2 border-primary/20 bg-gradient-to-br from-primary/90 via-secondary/80 to-white/90 p-10 pt-16 text-center transition-all duration-300 hover:-translate-y-3 hover:shadow-3xl hover:scale-105 animate-fade-in overflow-visible">
+            <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary shadow-lg text-white text-3xl border-4 border-white group-hover:scale-110 transition-transform" aria-hidden="true">
+              <i class="fas fa-home"></i>
+              <span class="sr-only">교실</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-primary drop-shadow">교실</h3>
+            <p class="text-gray-700 font-medium">연령별 맞춤 교실로 아이들의 발달 단계에 적합한 환경</p>
+          </div>
+          <!-- 급식실 카드 -->
+          <div class="group relative rounded-3xl shadow-2xl border-2 border-secondary/20 bg-gradient-to-br from-secondary/90 via-accent/80 to-white/90 p-10 pt-16 text-center transition-all duration-300 hover:-translate-y-3 hover:shadow-3xl hover:scale-105 animate-fade-in overflow-visible">
+            <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-secondary to-accent shadow-lg text-white text-3xl border-4 border-white group-hover:scale-110 transition-transform" aria-hidden="true">
+              <i class="fas fa-utensils"></i>
+              <span class="sr-only">급식실</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-secondary drop-shadow">급식실</h3>
+            <p class="text-gray-700 font-medium">위생적이고 영양가 있는 급식을 제공하는 전용 급식실</p>
+          </div>
+          <!-- 낮잠실 카드 -->
+          <div class="group relative rounded-3xl shadow-2xl border-2 border-accent/20 bg-gradient-to-br from-accent/90 via-primary/80 to-white/90 p-10 pt-16 text-center transition-all duration-300 hover:-translate-y-3 hover:shadow-3xl hover:scale-105 animate-fade-in overflow-visible">
+            <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-accent to-primary shadow-lg text-white text-3xl border-4 border-white group-hover:scale-110 transition-transform" aria-hidden="true">
+              <i class="fas fa-bed"></i>
+              <span class="sr-only">낮잠실</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-accent drop-shadow">낮잠실</h3>
+            <p class="text-gray-700 font-medium">조용하고 편안한 환경에서 충분한 휴식을 취할 수 있는 공간</p>
+          </div>
+          <!-- 놀이터 카드 -->
+          <div class="group relative rounded-3xl shadow-2xl border-2 border-primary/20 bg-gradient-to-br from-primary/90 via-secondary/80 to-white/90 p-10 pt-16 text-center transition-all duration-300 hover:-translate-y-3 hover:shadow-3xl hover:scale-105 animate-fade-in overflow-visible">
+            <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-secondary to-primary shadow-lg text-white text-3xl border-4 border-white group-hover:scale-110 transition-transform" aria-hidden="true">
+              <i class="fas fa-tree"></i>
+              <span class="sr-only">놀이터</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-secondary drop-shadow">놀이터</h3>
+            <p class="text-gray-700 font-medium">안전한 놀이기구와 넓은 야외 활동 공간</p>
+          </div>
+        </div>
+      </div>
+      <!-- 배경 장식 효과 및 하단 SVG Divider -->
+      <div class="pointer-events-none absolute inset-0 z-0">
+        <div class="absolute left-1/4 top-1/3 w-72 h-72 bg-secondary/10 rounded-full blur-3xl"></div>
+        <div class="absolute right-1/5 bottom-1/4 w-80 h-80 bg-primary/10 rounded-full blur-2xl"></div>
+      </div>
+      <div class="absolute -bottom-1 left-0 w-full overflow-hidden leading-none z-10" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-20">
+          <path d="M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z" fill="url(#facilities-bottom)"/>
+          <defs>
+            <linearGradient id="facilities-bottom" x1="0" y1="0" x2="1440" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#fff"/>
+              <stop offset="1" stop-color="#f8f9fa"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 하루 일과 섹션 -->
+    <section class="relative py-20 bg-gradient-to-br from-white via-[#f8f9fa] to-background overflow-hidden section-animate">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">하루 일과표</h2>
+          <p class="text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">체계적이고 균형 잡힌 하루 일과</p>
+        </div>
+        <div class="relative border-l-4 border-primary/30 pl-6">
+          <!-- 1 -->
+          <div class="mb-10 flex items-start group">
+            <div class="flex flex-col items-center mr-6">
+              <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-base shadow-lg group-hover:scale-110 transition">07:30</div>
+              <div class="w-1 h-full bg-primary/20"></div>
+            </div>
+            <div class="bg-white/90 rounded-xl shadow p-6 w-full">
+              <h4 class="text-lg font-semibold mb-1 text-gray-800">등원 및 자유놀이</h4>
+              <p class="text-gray-600">친구들과 인사하고 자유롭게 놀이해요</p>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="mb-10 flex items-start group">
+            <div class="flex flex-col items-center mr-6">
+              <div class="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center font-bold text-base shadow-lg group-hover:scale-110 transition">09:00</div>
+              <div class="w-1 h-full bg-secondary/20"></div>
+            </div>
+            <div class="bg-white/90 rounded-xl shadow p-6 w-full">
+              <h4 class="text-lg font-semibold mb-1 text-gray-800">오전 간식</h4>
+              <p class="text-gray-600">건강한 간식으로 에너지를 충전해요</p>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="mb-10 flex items-start group">
+            <div class="flex flex-col items-center mr-6">
+              <div class="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-base shadow-lg group-hover:scale-110 transition">09:30</div>
+              <div class="w-1 h-full bg-accent/20"></div>
+            </div>
+            <div class="bg-white/90 rounded-xl shadow p-6 w-full">
+              <h4 class="text-lg font-semibold mb-1 text-gray-800">주제 활동</h4>
+              <p class="text-gray-600">다양한 주제로 학습하고 체험해요</p>
+            </div>
+          </div>
+          <!-- 4 -->
+          <div class="mb-10 flex items-start group">
+            <div class="flex flex-col items-center mr-6">
+              <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-base shadow-lg group-hover:scale-110 transition">11:00</div>
+              <div class="w-1 h-full bg-primary/20"></div>
+            </div>
+            <div class="bg-white/90 rounded-xl shadow p-6 w-full">
+              <h4 class="text-lg font-semibold mb-1 text-gray-800">실외 활동</h4>
+              <p class="text-gray-600">바깥 놀이터에서 신나게 뛰어놀아요</p>
+            </div>
+          </div>
+          <!-- 5 -->
+          <div class="mb-10 flex items-start group">
+            <div class="flex flex-col items-center mr-6">
+              <div class="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center font-bold text-base shadow-lg group-hover:scale-110 transition">12:00</div>
+              <div class="w-1 h-full bg-secondary/20"></div>
+            </div>
+            <div class="bg-white/90 rounded-xl shadow p-6 w-full">
+              <h4 class="text-lg font-semibold mb-1 text-gray-800">점심 및 양치</h4>
+              <p class="text-gray-600">영양가 있는 점심을 먹고 이를 깨끗이 닦아요</p>
+            </div>
+          </div>
+          <!-- 6 -->
+          <div class="mb-10 flex items-start group">
+            <div class="flex flex-col items-center mr-6">
+              <div class="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-base shadow-lg group-hover:scale-110 transition">13:00</div>
+              <div class="w-1 h-full bg-accent/20"></div>
+            </div>
+            <div class="bg-white/90 rounded-xl shadow p-6 w-full">
+              <h4 class="text-lg font-semibold mb-1 text-gray-800">낮잠</h4>
+              <p class="text-gray-600">조용한 낮잠실에서 충분히 휴식해요</p>
+            </div>
+          </div>
+          <!-- 7 -->
+          <div class="mb-10 flex items-start group">
+            <div class="flex flex-col items-center mr-6">
+              <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-base shadow-lg group-hover:scale-110 transition">15:00</div>
+              <div class="w-1 h-full bg-primary/20"></div>
+            </div>
+            <div class="bg-white/90 rounded-xl shadow p-6 w-full">
+              <h4 class="text-lg font-semibold mb-1 text-gray-800">오후 간식</h4>
+              <p class="text-gray-600">맛있는 오후 간식으로 기분을 업시켜요</p>
+            </div>
+          </div>
+          <!-- 8 -->
+          <div class="mb-10 flex items-start group">
+            <div class="flex flex-col items-center mr-6">
+              <div class="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center font-bold text-base shadow-lg group-hover:scale-110 transition">15:30</div>
+              <div class="w-1 h-full bg-secondary/20"></div>
+            </div>
+            <div class="bg-white/90 rounded-xl shadow p-6 w-full">
+              <h4 class="text-lg font-semibold mb-1 text-gray-800">자유 선택 활동</h4>
+              <p class="text-gray-600">원하는 놀이를 선택해서 활동해요</p>
+            </div>
+          </div>
+          <!-- 9 -->
+          <div class="flex items-start group">
+            <div class="flex flex-col items-center mr-6">
+              <div class="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-base shadow-lg group-hover:scale-110 transition">16:30</div>
+            </div>
+            <div class="bg-white/90 rounded-xl shadow p-6 w-full">
+              <h4 class="text-lg font-semibold mb-1 text-gray-800">하원 및 연장보육</h4>
+              <p class="text-gray-600">부모님과 함께 집으로 가거나 연장보육을 받아요</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 배경 장식 효과 -->
+      <div class="pointer-events-none absolute inset-0 z-0">
+        <div class="absolute left-1/4 top-1/3 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
+        <div class="absolute right-1/5 bottom-1/4 w-80 h-80 bg-primary/10 rounded-full blur-2xl"></div>
+      </div>
+    </section>
+
+    <!-- 학부모 후기 섹션 -->
+    <section class="relative py-24 bg-gradient-to-br from-white via-[#f8f9fa] to-background overflow-hidden section-animate">
+      <!-- 상단 곡선 SVG Divider -->
+      <div class="absolute -top-1 left-0 w-full overflow-hidden leading-none z-10" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-20">
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="url(#testimonials-top)"/>
+          <defs>
+            <linearGradient id="testimonials-top" x1="0" y1="0" x2="1440" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#f8f9fa"/>
+              <stop offset="1" stop-color="#fff"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="max-w-6xl mx-auto px-4 relative z-20">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-accent drop-shadow-lg tracking-tight">학부모님들의 생생한 후기</h2>
+          <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium">실제 이용하고 계신 학부모님들의 솔직한 이야기</p>
+        </div>
+        <div class="testimonial-slider relative">
+          <div class="testimonial-track flex transition-transform duration-500 ease-in-out">
+            <!-- 후기 1 -->
+            <div class="testimonial-slide w-full shrink-0 px-2">
+              <div class="group relative rounded-3xl shadow-2xl border-2 border-accent/20 bg-gradient-to-br from-accent/90 via-primary/80 to-white/90 p-10 pt-16 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-3 hover:shadow-3xl hover:scale-105 animate-fade-in overflow-visible">
+                <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-accent to-primary shadow-lg text-white text-3xl border-4 border-white group-hover:scale-110 transition-transform" aria-hidden="true">
+                  <i class="fas fa-star"></i>
+                  <span class="sr-only">후기 아이콘</span>
+                </div>
+                <p class="text-gray-800 mb-6 font-medium text-lg">"선생님들이 정말 친절하시고 아이를 세심하게 돌봐주세요. 매일 앱으로 아이 상황을 알려주셔서 안심이 됩니다."</p>
+                <div class="flex flex-col items-center">
+                  <span class="font-bold text-accent text-lg">김○○ 학부모님</span>
+                  <span class="text-xs text-gray-500 mt-1">만 4세 학부모</span>
+                </div>
+              </div>
+            </div>
+            <!-- 후기 2 -->
+            <div class="testimonial-slide w-full shrink-0 px-2">
+              <div class="group relative rounded-3xl shadow-2xl border-2 border-primary/20 bg-gradient-to-br from-primary/90 via-accent/80 to-white/90 p-10 pt-16 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-3 hover:shadow-3xl hover:scale-105 animate-fade-in overflow-visible">
+                <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent shadow-lg text-white text-3xl border-4 border-white group-hover:scale-110 transition-transform" aria-hidden="true">
+                  <i class="fas fa-star"></i>
+                  <span class="sr-only">후기 아이콘</span>
+                </div>
+                <p class="text-gray-800 mb-6 font-medium text-lg">"아이가 어린이집 가는 것을 너무 좋아해요. 다양한 활동을 통해 많이 성장한 것 같습니다."</p>
+                <div class="flex flex-col items-center">
+                  <span class="font-bold text-primary text-lg">이○○ 학부모님</span>
+                  <span class="text-xs text-gray-500 mt-1">만 5세 학부모</span>
+                </div>
+              </div>
+            </div>
+            <!-- 후기 3 -->
+            <div class="testimonial-slide w-full shrink-0 px-2">
+              <div class="group relative rounded-3xl shadow-2xl border-2 border-secondary/20 bg-gradient-to-br from-secondary/90 via-accent/80 to-white/90 p-10 pt-16 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-3 hover:shadow-3xl hover:scale-105 animate-fade-in overflow-visible">
+                <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-secondary to-accent shadow-lg text-white text-3xl border-4 border-white group-hover:scale-110 transition-transform" aria-hidden="true">
+                  <i class="fas fa-star"></i>
+                  <span class="sr-only">후기 아이콘</span>
+                </div>
+                <p class="text-gray-800 mb-6 font-medium text-lg">"깨끗하고 안전한 시설, 그리고 무엇보다 아이들을 진심으로 사랑해주시는 마음이 느껴집니다."</p>
+                <div class="flex flex-col items-center">
+                  <span class="font-bold text-secondary text-lg">박○○ 학부모님</span>
+                  <span class="text-xs text-gray-500 mt-1">만 3세 학부모</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 내비게이션 -->
+          <button class="testimonial-prev absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 rounded-full shadow p-3 text-2xl text-primary dark:text-yellow-300 z-10 hover:bg-primary/10 dark:hover:bg-gray-700/80 transition" aria-label="이전 후기"><i class="fas fa-chevron-left"></i></button>
+          <button class="testimonial-next absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 rounded-full shadow p-3 text-2xl text-primary dark:text-yellow-300 z-10 hover:bg-primary/10 dark:hover:bg-gray-700/80 transition" aria-label="다음 후기"><i class="fas fa-chevron-right"></i></button>
+          <div class="testimonial-dots flex justify-center gap-2 mt-8"></div>
+        </div>
+      </div>
+      <!-- 배경 장식 효과 및 하단 SVG Divider -->
+      <div class="pointer-events-none absolute inset-0 z-0">
+        <div class="absolute left-1/4 top-1/3 w-72 h-72 bg-secondary/10 rounded-full blur-3xl"></div>
+        <div class="absolute right-1/5 bottom-1/4 w-80 h-80 bg-accent/10 rounded-full blur-2xl"></div>
+      </div>
+      <div class="absolute -bottom-1 left-0 w-full overflow-hidden leading-none z-10" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-20">
+          <path d="M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z" fill="url(#testimonials-bottom)"/>
+          <defs>
+            <linearGradient id="testimonials-bottom" x1="0" y1="0" x2="1440" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#fff"/>
+              <stop offset="1" stop-color="#f8f9fa"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 문의 섹션 -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>상담 및 문의</h2>
+          <p>궁금한 것이 있으시면 언제든지 연락주세요</p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h4>전화 문의</h4>
+                <p>02-1234-5678</p>
+                <small>평일 08:00 - 18:00</small>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h4>찾아오시는 길</h4>
+                <p>서울시 강남구 테헤란로 123</p>
+                <small>지하철 2호선 강남역 5번 출구 도보 3분</small>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h4>이메일</h4>
+                <p>happy@daycare.co.kr</p>
+                <small>24시간 문의 가능</small>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <h3>상담 신청</h3>
+            <form class="consultation-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="parent-name">학부모 성함</label>
+                  <input
+                    type="text"
+                    id="parent-name"
+                    name="parent-name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="child-age">아이 연령</label>
+                  <select id="child-age" name="child-age" required>
+                    <option value="">선택하세요</option>
+                    <option value="만2세">만 2세</option>
+                    <option value="만3세">만 3세</option>
+                    <option value="만4세">만 4세</option>
+                    <option value="만5세">만 5세</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">연락처</label>
+                  <input type="tel" id="phone" name="phone" required />
+                </div>
+                <div class="form-group">
+                  <label for="preferred-time">희망 상담 시간</label>
+                  <select id="preferred-time" name="preferred-time" required>
+                    <option value="">선택하세요</option>
+                    <option value="오전">오전 (09:00-12:00)</option>
+                    <option value="오후">오후 (13:00-17:00)</option>
+                    <option value="저녁">저녁 (17:00-19:00)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message">문의 내용</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="궁금한 내용을 자유롭게 작성해주세요"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">
+                <i class="fas fa-paper-plane"></i> 상담 신청하기
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 플로팅 버튼 (모바일/PC 모두 자연스럽게) -->
+    <div class="fixed z-50 bottom-6 right-6 flex flex-col gap-3 items-end">
+      <button onclick="scrollToTop()" title="맨 위로" class="w-12 h-12 rounded-full bg-primary text-white shadow-lg flex items-center justify-center text-xl hover:bg-primary/90 transition">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+      <a href="tel:02-1234-5678" title="전화걸기" class="w-12 h-12 rounded-full bg-accent text-white shadow-lg flex items-center justify-center text-xl hover:bg-accent/90 transition">
+        <i class="fas fa-phone"></i>
+      </a>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+  // 다크모드 토글 및 시스템 감지
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const darkModeIcon = document.getElementById('darkModeIcon');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+  function setDarkMode(on) {
+    document.documentElement.classList.toggle('dark', on);
+    darkModeIcon.className = on ? 'fas fa-sun' : 'fas fa-moon';
+    localStorage.setItem('darkMode', on ? 'on' : 'off');
+  }
+  // 초기 상태
+  const saved = localStorage.getItem('darkMode');
+  const systemDark = prefersDark.matches;
+  setDarkMode(saved === 'on' || (saved === null && systemDark));
+  // 토글 버튼 이벤트
+  darkModeToggle.onclick = () => {
+    setDarkMode(!document.documentElement.classList.contains('dark'));
+  };
+  // 시스템 설정 변경 감지
+  prefersDark.addEventListener('change', e => {
+    if (localStorage.getItem('darkMode') === null) setDarkMode(e.matches);
+  });
+  </script>
+  </body>
+</html>

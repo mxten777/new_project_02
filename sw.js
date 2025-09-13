@@ -19,6 +19,7 @@ const STATIC_CACHE_URLS = [
   '/components/hero-component.js',
   '/components/about-component.js',
   '/components/programs-component.js',
+  '/components/teachers-component.js',
   '/components/facilities-component.js',
   '/components/testimonial-slider-component.js',
   '/components/contact-component.js',

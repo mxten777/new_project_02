@@ -6,7 +6,12 @@
 // 컴포넌트 불러오기
 import './header-component.js';
 import './hero-component.js';
+import './about-component.js';
+import './programs-component.js';
+import './teachers-component.js';
+import './facilities-component.js';
 import './testimonial-slider-component.js';
+import './contact-component.js';
 import './footer-component.js';
 
 // 다크모드 관리
