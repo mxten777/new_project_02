@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌟 아이뜨락 어린이집 - 사랑과 성장이 함께하는 곳</title>
+  <link rel="canonical" href="https://aitrak-daycare-mvp.vercel.app/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#ff6b6b" />
+  
+  <!-- 페이지 로드 성능을 위한 preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- 메타 정보 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="아이뜨락 어린이집 - 사랑과 성장이 함께하는 곳" />
+  <meta property="og:description" content="사랑과 성장이 함께하는 아이뜨락 어린이집. 수원에서 아이들의 꿈과 가능성을 키우는 신뢰받는 보육시설입니다." />
+  <meta property="og:url" content="https://aitrak-daycare-mvp.vercel.app/" />
+  <meta property="og:site_name" content="아이뜨락 어린이집" />
+  <meta property="og:image" content="/image/sample_img_03.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="아이뜨락 어린이집 - 사랑과 성장이 함께하는 곳" />
+  <meta name="twitter:description" content="사랑과 성장이 함께하는 아이뜨락 어린이집. 수원에서 아이들의 꿈과 가능성을 키우는 신뢰받는 보육시설입니다." />
+  <meta name="twitter:image" content="/image/sample_img_03.jpg" />
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" as="image" href="/image/sample_img_03.jpg" imagesrcset="/image/sample_img_03.jpg 1x" />
+  <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" crossorigin />
+  <link rel="preload" as="style" href="./dist/output.css" />
+  <link rel="preload" as="script" href="optimizer.js" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./dist/output.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="optimization.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" data-defer="true" />
+  
+  <!-- PWA 매니페스트 -->
+  <link rel="manifest" href="manifest.json" />
+  
+  <style>
+    /* Tailwind 커스텀 애니메이션 유틸리티 */
+    .animate-fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+    }
+    .animate-in {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-900 bg-white dark:bg-gray-900 dark:text-white transition-colors duration-300">
+  <!-- 다크모드 토글 버튼 -->
+  <button id="darkModeToggle" aria-label="다크모드 전환" class="fixed top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/80 dark:bg-gray-800/80 shadow-lg flex items-center justify-center text-2xl text-primary dark:text-yellow-300 border border-primary/20 dark:border-yellow-300/30 transition-colors duration-300 hover:bg-primary/10 dark:hover:bg-gray-700/80">
+    <i id="darkModeIcon" class="fas fa-moon"></i>
+  </button>
+
+  <!-- 웹 컴포넌트 사용 -->
+  <header-component></header-component>
+  <hero-component></hero-component>
+  <about-component></about-component>
+  <programs-component></programs-component>
+  <facilities-component></facilities-component>
+  <testimonial-slider-component></testimonial-slider-component>
+  <contact-component></contact-component>
+  <footer-component></footer-component>
+
+  <!-- 플로팅 버튼 -->
+  <div class="floating-buttons fixed bottom-8 right-8 flex flex-col gap-3 z-40">
+    <a href="tel:031-123-4567" class="btn-floating bg-primary hover:bg-primary-dark dark:bg-yellow-300 dark:hover:bg-yellow-400 text-white dark:text-gray-900 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" aria-label="전화하기">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+    <a href="#" class="btn-floating bg-white dark:bg-gray-800 text-primary dark:text-yellow-300 border-2 border-primary dark:border-yellow-300 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" aria-label="맨 위로 이동" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+  </div>
+
+  <!-- 스크립트 -->
+  <script type="module" src="components/component-manager.js"></script>
+  <script type="module" src="components/about-component.js"></script>
+  <script type="module" src="components/programs-component.js"></script>
+  <script type="module" src="components/facilities-component.js"></script>
+  <script type="module" src="components/contact-component.js"></script>
+  <script src="optimizer.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

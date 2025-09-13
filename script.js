@@ -14,14 +14,74 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 앱 설치 프롬프트
+
+  // 앱 설치 프롬프트 (커스텀 버튼 항상 노출)
   let deferredPrompt;
+  const installBtn = document.createElement("button");
+  installBtn.textContent = "📱 앱 설치하기";
+  installBtn.className = "btn btn-primary install-btn fixed top-4 right-4 z-[1001] text-sm px-4 py-2 shadow-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400 transition-transform duration-150";
+  installBtn.setAttribute("aria-label", "앱 설치하기");
+  installBtn.style.display = "none";
+  document.body.appendChild(installBtn);
+
   window.addEventListener("beforeinstallprompt", function (e) {
     e.preventDefault();
     deferredPrompt = e;
+    installBtn.style.display = "block";
+  });
 
-    // 설치 버튼 표시 (필요시)
-    showInstallButton();
+  installBtn.addEventListener("click", function () {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(function (choiceResult) {
+        if (choiceResult.outcome === "accepted") {
+          console.log("사용자가 앱 설치를 허용했습니다");
+        } else {
+          console.log("사용자가 앱 설치를 거부했습니다");
+        }
+        deferredPrompt = null;
+        installBtn.style.display = "none";
+      });
+    }
+  });
+
+  window.addEventListener("appinstalled", function () {
+    installBtn.style.display = "none";
+  });
+  // 오프라인 UX: 오프라인 시 안내 모달 표시
+  function showOfflineModal() {
+    if (document.querySelector("#offline-modal")) return;
+    const modal = document.createElement("div");
+    modal.id = "offline-modal";
+    modal.className = "fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-[10000]";
+    modal.innerHTML = `
+      <div class="bg-white rounded-xl p-8 shadow-xl text-center max-w-xs w-full animate-in" role="dialog" aria-modal="true" aria-labelledby="offline-title">
+        <div class="text-4xl mb-2" aria-hidden="true">📡</div>
+        <h2 id="offline-title" class="text-lg font-bold mb-2">오프라인 상태입니다</h2>
+        <p class="text-gray-600 mb-4">인터넷 연결이 끊어졌습니다.<br>일부 기능이 제한될 수 있습니다.</p>
+        <button class="btn btn-primary mt-2" onclick="document.getElementById('offline-modal').remove()" aria-label="닫기">닫기</button>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+  window.addEventListener("offline", showOfflineModal);
+  // 모든 버튼에 마이크로 인터랙션(눌림 효과) 추가
+  document.querySelectorAll('button, .btn').forEach(btn => {
+    btn.addEventListener('mousedown', function() {
+      btn.classList.add('scale-95');
+    });
+    btn.addEventListener('mouseup', function() {
+      btn.classList.remove('scale-95');
+    });
+    btn.addEventListener('mouseleave', function() {
+      btn.classList.remove('scale-95');
+    });
+    btn.addEventListener('touchstart', function() {
+      btn.classList.add('scale-95');
+    });
+    btn.addEventListener('touchend', function() {
+      btn.classList.remove('scale-95');
+    });
   });
 
   // 모바일 메뉴 토글
@@ -109,10 +169,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, observerOptions);
 
-  // 애니메이션 대상 요소들 관찰
+  // 섹션별 reveal 애니메이션 (더 많은 섹션 포함)
   document
     .querySelectorAll(
-      ".feature-card, .program-card, .teacher-card, .facility-item, .testimonial-card, .about-item, .schedule-item"
+      ".feature-card, .program-card, .teacher-card, .facility-item, .testimonial-card, .about-item, .schedule-item, section, .floating-buttons"
     )
     .forEach((el) => {
       observer.observe(el);
@@ -152,27 +212,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// 섹션으로 부드럽게 스크롤
-function scrollToSection(sectionId) {
-  const section = document.getElementById(sectionId);
-  if (section) {
-    const headerHeight = document.querySelector(".header").offsetHeight;
-    const targetPosition = section.offsetTop - headerHeight;
-
-    window.scrollTo({
-      top: targetPosition,
-      behavior: "smooth",
+// 모든 내부 anchor 링크에 부드러운 스크롤 적용
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = anchor.getAttribute('href');
+      if (href.length > 1 && document.querySelector(href)) {
+        e.preventDefault();
+        const section = document.querySelector(href);
+        const header = document.querySelector('.header');
+        const headerHeight = header ? header.offsetHeight : 0;
+        const targetPosition = section.offsetTop - headerHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth',
+        });
+      }
     });
-  }
-}
-
-// 맨 위로 스크롤
-function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
   });
-}
+});
 
 // 성공 메시지 표시
 function showSuccessMessage() {
@@ -352,12 +410,14 @@ if (!document.querySelector("#mobile-menu-styles")) {
 // 스크롤 시 플로팅 버튼 표시/숨기기
 window.addEventListener("scroll", function () {
   const floatingButtons = document.querySelector(".floating-buttons");
-  if (window.scrollY > 300) {
-    floatingButtons.style.opacity = "1";
-    floatingButtons.style.visibility = "visible";
-  } else {
-    floatingButtons.style.opacity = "0";
-    floatingButtons.style.visibility = "hidden";
+  if (floatingButtons) {
+    if (window.scrollY > 300) {
+      floatingButtons.style.opacity = "1";
+      floatingButtons.style.visibility = "visible";
+    } else {
+      floatingButtons.style.opacity = "0";
+      floatingButtons.style.visibility = "hidden";
+    }
   }
 });
 
