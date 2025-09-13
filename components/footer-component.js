@@ -18,7 +18,7 @@ class FooterComponent extends HTMLElement {
                 <span class="text-accent">아이</span>뜨락 <span>어린이집</span>
               </div>
               <p class="text-gray-400 mb-6 leading-relaxed">
-                아이들의 행복한 미래를 위한 첫 걸음, 아이뜨락 어린이집이 함께합니다.
+                아이들의 호기심과 창의력을 북돋우며 행복한 미래를 준비하는 특별한 공간입니다.
               </p>
               <div class="flex gap-4">
                 <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="인스타그램">

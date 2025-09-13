@@ -11,6 +11,7 @@
   <!-- 페이지 로드 성능을 위한 preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://dapi.kakao.com" crossorigin />
   
   <!-- 메타 정보 -->
   <meta property="og:type" content="website" />
@@ -77,11 +78,11 @@
   <footer-component></footer-component>
 
   <!-- 플로팅 버튼 -->
-  <div class="floating-buttons fixed bottom-8 right-8 flex flex-col gap-3 z-40">
-    <a href="tel:031-123-4567" class="btn-floating bg-primary hover:bg-primary-dark dark:bg-yellow-300 dark:hover:bg-yellow-400 text-white dark:text-gray-900 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" aria-label="전화하기">
+  <div class="floating-buttons fixed bottom-28 right-6 flex flex-col gap-3 z-50">
+    <a href="tel:031-123-4567" class="btn-floating bg-primary hover:bg-primary-dark dark:bg-yellow-300 dark:hover:bg-yellow-400 text-white dark:text-gray-900 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" aria-label="전화하기">
       <i class="fas fa-phone-alt"></i>
     </a>
-    <a href="#" class="btn-floating bg-white dark:bg-gray-800 text-primary dark:text-yellow-300 border-2 border-primary dark:border-yellow-300 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" aria-label="맨 위로 이동" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+    <a href="#" class="btn-floating bg-white dark:bg-gray-800 text-primary dark:text-yellow-300 border-2 border-primary dark:border-yellow-300 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" aria-label="맨 위로 이동" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
       <i class="fas fa-arrow-up"></i>
     </a>
   </div>
@@ -94,6 +95,7 @@
   <script type="module" src="components/contact-component.js"></script>
   <script src="js/page-optimizer.js"></script>
   <script src="js/image-optimizer.js" defer></script>
+  <script src="js/testimonial-slider.js" defer></script>
   <script src="script.js" defer></script>
   
   <!-- 서비스 워커 등록 -->
@@ -288,7 +290,7 @@
     <section id="about" class="relative py-20 bg-gradient-to-br from-white via-[#fafbff] to-background overflow-hidden">
       <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">행복한 어린이집을 소개합니다</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">아이뜨락 어린이집을 소개합니다</h2>
           <p class="text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">2015년 개원 이래 800여 명의 아이들과 함께 성장해온 신뢰받는 어린이집입니다</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -870,7 +872,7 @@
           <div class="flex flex-col items-start gap-4">
             <div class="flex items-center gap-2 text-primary text-2xl font-bold" tabindex="0">
               <i class="fas fa-child" aria-hidden="true"></i>
-              <span class="text-lg md:text-xl">행복한 어린이집</span>
+              <span class="text-lg md:text-xl">아이뜨락 어린이집</span>
             </div>
             <p class="text-gray-600 text-sm">아이들의 꿈과 가능성을 키우는 신뢰받는 어린이집</p>
             <div class="flex gap-3 mt-2">
@@ -911,7 +913,7 @@
           </div>
         </div>
         <div class="border-t border-primary/10 pt-6 text-center text-xs text-gray-500">
-          &copy; 2024 행복한 어린이집. All rights reserved.
+          &copy; 2024 아이뜨락 어린이집. All rights reserved.
         </div>
       </div>
     </footer>

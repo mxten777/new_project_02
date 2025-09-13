@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* 불필요한 레거시 CSS(Tailwind로 대체된 부분) 삭제 및 주석 처리 */
 /* .container, .logo, .hero, .hero-container 등은 Tailwind 유틸리티로 대체됨 */
 

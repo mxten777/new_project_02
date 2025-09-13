@@ -12,7 +12,7 @@ class AboutComponent extends HTMLElement {
       <section id="about" class="relative py-20 bg-gradient-to-br from-white via-[#fafbff] to-background overflow-hidden">
         <div class="max-w-6xl mx-auto px-4">
           <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800 dark:text-white">행복한 어린이집을 소개합니다</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800 dark:text-white">아이뜨락 어린이집을 소개합니다</h2>
             <p class="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto leading-relaxed">2015년 개원 이래 800여 명의 아이들과 함께 성장해온 신뢰받는 어린이집입니다</p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

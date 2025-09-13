@@ -29,18 +29,18 @@ class TestimonialSliderComponent extends HTMLElement {
             <p class="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed font-medium">학부모님들이 들려주신 진솔한 이야기</p>
           </div>
           
-          <div class="testimonial-slider relative">
+          <div class="testimonial-slider relative max-w-4xl mx-auto overflow-hidden">
             <div class="testimonial-track flex transition-transform duration-500 ease-in-out">
               <!-- 후기 1 -->
-              <div class="testimonial-slide w-full shrink-0 px-2">
-                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg text-center md:text-left">
+              <div class="testimonial-slide w-full shrink-0 px-4">
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg text-center md:text-left h-full">
                   <div class="flex flex-col md:flex-row items-center gap-6">
                     <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-accent/20 dark:border-accent/10 flex-shrink-0">
                       <img src="/image/pinterest_29.jpg" alt="학부모 사진" class="w-full h-full object-cover" />
                     </div>
-                    <div>
+                    <div class="flex-grow">
                       <div class="text-amber-400 text-2xl mb-3">★★★★★</div>
-                      <p class="text-gray-700 dark:text-gray-300 mb-4 italic">"아이가 어린이집에 다닌 후 사회성이 크게 향상되었어요. 선생님들의 세심한 관심과 전문적인 교육 방식에 너무 만족합니다. 특히 창의적인 활동들이 아이의 상상력을 키워주는 것 같아요."</p>
+                      <p class="text-gray-700 dark:text-gray-300 mb-4 italic text-base md:text-lg line-clamp-4 md:line-clamp-none">"아이가 어린이집에 다닌 후 사회성이 크게 향상되었어요. 선생님들의 세심한 관심과 전문적인 교육 방식에 너무 만족합니다. 특히 창의적인 활동들이 아이의 상상력을 키워주는 것 같아요."</p>
                       <div class="font-bold text-lg text-primary dark:text-yellow-300">김지은 학부모</div>
                       <div class="text-gray-500 dark:text-gray-400 text-sm">만 4세 민준이 엄마</div>
                     </div>
@@ -49,15 +49,15 @@ class TestimonialSliderComponent extends HTMLElement {
               </div>
               
               <!-- 후기 2 -->
-              <div class="testimonial-slide w-full shrink-0 px-2">
-                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg text-center md:text-left">
+              <div class="testimonial-slide w-full shrink-0 px-4">
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg text-center md:text-left h-full">
                   <div class="flex flex-col md:flex-row items-center gap-6">
                     <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-accent/20 dark:border-accent/10 flex-shrink-0">
                       <img src="/image/20240909_05.jpg" alt="학부모 사진" class="w-full h-full object-cover" />
                     </div>
-                    <div>
+                    <div class="flex-grow">
                       <div class="text-amber-400 text-2xl mb-3">★★★★★</div>
-                      <p class="text-gray-700 dark:text-gray-300 mb-4 italic">"우리 아이가 매일 어린이집에 가는 것을 기대해요. 선생님들의 따뜻한 보살핌과 다양한 활동들이 아이의 성장에 큰 도움이 되고 있습니다. 특히 자연 친화적인 교육 방식이 마음에 들어요."</p>
+                      <p class="text-gray-700 dark:text-gray-300 mb-4 italic text-base md:text-lg line-clamp-4 md:line-clamp-none">"우리 아이가 매일 어린이집에 가는 것을 기대해요. 선생님들의 따뜻한 보살핌과 다양한 활동들이 아이의 성장에 큰 도움이 되고 있습니다. 특히 자연 친화적인 교육 방식이 마음에 들어요."</p>
                       <div class="font-bold text-lg text-primary dark:text-yellow-300">박현우 학부모</div>
                       <div class="text-gray-500 dark:text-gray-400 text-sm">만 3세 서연이 아빠</div>
                     </div>
@@ -66,15 +66,15 @@ class TestimonialSliderComponent extends HTMLElement {
               </div>
               
               <!-- 후기 3 -->
-              <div class="testimonial-slide w-full shrink-0 px-2">
-                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg text-center md:text-left">
+              <div class="testimonial-slide w-full shrink-0 px-4">
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg text-center md:text-left h-full">
                   <div class="flex flex-col md:flex-row items-center gap-6">
                     <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-accent/20 dark:border-accent/10 flex-shrink-0">
                       <img src="/image/sample_img_03.jpg" alt="학부모 사진" class="w-full h-full object-cover" />
                     </div>
-                    <div>
+                    <div class="flex-grow">
                       <div class="text-amber-400 text-2xl mb-3">★★★★★</div>
-                      <p class="text-gray-700 dark:text-gray-300 mb-4 italic">"처음에는 걱정이 많았는데, 아이뜨락 어린이집의 투명한 운영 방식과 열린 소통에 안심이 되었어요. 급식 메뉴도 영양사가 꼼꼼히 관리하고, 위생 상태도 항상 청결해서 믿고 맡길 수 있어요."</p>
+                      <p class="text-gray-700 dark:text-gray-300 mb-4 italic text-base md:text-lg line-clamp-4 md:line-clamp-none">"처음에는 걱정이 많았는데, 아이뜨락 어린이집의 투명한 운영 방식과 열린 소통에 안심이 되었어요. 급식 메뉴도 영양사가 꼼꼼히 관리하고, 위생 상태도 항상 청결해서 믿고 맡길 수 있어요."</p>
                       <div class="font-bold text-lg text-primary dark:text-yellow-300">이수진 학부모</div>
                       <div class="text-gray-500 dark:text-gray-400 text-sm">만 5세 지호 엄마</div>
                     </div>

@@ -34,8 +34,8 @@ class HeroComponent extends HTMLElement {
               <div class="relative">
                 <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl transform rotate-6 dark:from-primary/10 dark:to-accent/10"></div>
                 <img 
-                  src="/image/sample_img_03.jpg" 
-                  alt="행복한 아이들이 놀고 있는 모습" 
+                  src="/image/baikal_logo.png" 
+                  alt="바이칼 로고" 
                   class="rounded-3xl shadow-xl relative z-10 transform hover:scale-[1.02] transition duration-500"
                   width="600"
                   height="400"

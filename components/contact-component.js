@@ -160,14 +160,17 @@ class ContactComponent extends HTMLElement {
 
           <!-- 지도 섹션 -->
           <div class="mt-16 bg-white dark:bg-gray-800/80 rounded-3xl shadow-2xl p-6 border border-gray-100 dark:border-gray-700 overflow-hidden backdrop-blur-sm">
+            <h3 class="text-2xl font-bold mb-4 text-primary dark:text-yellow-300">찾아오시는 길</h3>
             <div class="aspect-video relative rounded-2xl overflow-hidden">
-              <!-- 실제 구현 시 여기에 지도 API를 연동하세요 -->
-              <div class="absolute inset-0 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                <p class="text-gray-500 dark:text-gray-400 text-center p-4">
-                  <i class="fas fa-map-marked-alt text-4xl mb-4"></i><br>
-                  이 영역에 실제 지도가 표시됩니다.<br>
-                  (구현 시 Google Maps 또는 Kakao Maps API 연동)
-                </p>
+              <!-- 카카오맵 API 연동 -->
+              <div id="kakao-map" class="w-full h-full">
+                <!-- 카카오맵이 로딩되는 동안 표시할 placeholder -->
+                <div class="absolute inset-0 bg-gray-200 dark:bg-gray-700 flex items-center justify-center map-loading-placeholder">
+                  <p class="text-gray-500 dark:text-gray-400 text-center p-4">
+                    <i class="fas fa-map-marked-alt text-4xl mb-4"></i><br>
+                    지도를 불러오는 중입니다...
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -181,8 +184,84 @@ class ContactComponent extends HTMLElement {
       </section>
     `;
     
-    // 폼 제출 처리 (예시 코드)
+    // 폼 제출 처리 및 카카오맵 로드
     this.setupFormHandler();
+    this.loadKakaoMap();
+  }
+  
+  loadKakaoMap() {
+    // DOM이 완전히 로드된 후 카카오맵 API 로드
+    setTimeout(() => {
+      // 카카오맵 API 스크립트 추가 - 실제 API 키로 교체 필요
+      if (!document.querySelector('script[src*="kakao.maps.api"]')) {
+        const script = document.createElement('script');
+        // 애플리케이션에 맞는 유효한 API 키로 교체해야 합니다
+        script.src = 'https://dapi.kakao.com/v2/maps/sdk.js?appkey=fe1eba2b6639bcda24ccb40f4e4afbdd&autoload=false';
+        script.onload = () => {
+          kakao.maps.load(() => {
+            this.initializeMap();
+          });
+        };
+        document.head.appendChild(script);
+      } else if (window.kakao && window.kakao.maps) {
+        // 이미 로드된 경우
+        this.initializeMap();
+      }
+    }, 500);
+  }
+  
+  initializeMap() {
+    const mapContainer = this.querySelector('#kakao-map');
+    if (!mapContainer) return;
+    
+    // 로딩 placeholder 제거
+    const placeholder = mapContainer.querySelector('.map-loading-placeholder');
+    if (placeholder) placeholder.remove();
+    
+    // 아이뜨락 어린이집 가상 위치 좌표 (실제 위치로 교체 필요)
+    // 현재는 서울시청 좌표를 사용합니다
+    const latitude = 37.566826;
+    const longitude = 126.978656;
+    
+    // 지도 옵션 설정
+    const mapOptions = {
+      center: new kakao.maps.LatLng(latitude, longitude),
+      level: 3 // 지도 확대 레벨 (1~14, 낮을수록 확대)
+    };
+    
+    // 지도 생성
+    const map = new kakao.maps.Map(mapContainer, mapOptions);
+    
+    // 마커 생성
+    const markerPosition = new kakao.maps.LatLng(latitude, longitude);
+    const marker = new kakao.maps.Marker({
+      position: markerPosition
+    });
+    
+    // 지도에 마커 표시
+    marker.setMap(map);
+    
+    // 인포윈도우 생성
+    const infoWindowContent = '<div style="padding:10px;width:220px;text-align:center;font-weight:bold;">아이뜨락 어린이집</div>';
+    const infoWindow = new kakao.maps.InfoWindow({
+      content: infoWindowContent,
+      removable: true
+    });
+    
+    // 인포윈도우 표시
+    infoWindow.open(map, marker);
+    
+    // 지도 크기 변경 시 리사이즈 대응
+    window.addEventListener('resize', () => {
+      map.relayout();
+    });
+    
+    // 지도 컨트롤 추가
+    const zoomControl = new kakao.maps.ZoomControl();
+    map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+    
+    const mapTypeControl = new kakao.maps.MapTypeControl();
+    map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
   }
   
   setupFormHandler() {
