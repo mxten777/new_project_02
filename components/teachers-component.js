@@ -17,30 +17,21 @@ class TeachersComponent extends HTMLElement {
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <div class="rounded-xl shadow-lg border border-secondary/10 bg-gradient-to-br from-secondary/95 to-primary/95 text-white backdrop-blur p-8 text-center transition hover:-translate-y-2 hover:shadow-2xl">
-            <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full bg-white/20 text-4xl" aria-hidden="true">
-              <i class="fas fa-user-tie"></i>
-              <span class="sr-only">원장</span>
-            </div>
+            <img src="/public/images/20240909_05.jpg" alt="원장님 사진" class="w-32 h-32 mx-auto mb-6 object-cover border-4 border-white shadow-md" />
             <h3 class="text-xl font-bold mb-1">김원장님</h3>
             <p class="text-base font-semibold mb-1">원장</p>
             <p class="text-sm mb-1">보육경력 15년</p>
             <p class="text-sm opacity-80">유아교육과 졸업, 보육교사 1급 자격증</p>
           </div>
           <div class="rounded-xl shadow-lg border border-secondary/10 bg-gradient-to-br from-primary/90 to-secondary/90 text-white backdrop-blur p-8 text-center transition hover:-translate-y-2 hover:shadow-2xl">
-            <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full bg-white/20 text-4xl" aria-hidden="true">
-              <i class="fas fa-user"></i>
-              <span class="sr-only">담임 선생님</span>
-            </div>
+            <img src="/public/images/sample_img_03.jpg" alt="이선생님 사진" class="w-32 h-32 mx-auto mb-6 object-cover border-4 border-white shadow-md" />
             <h3 class="text-xl font-bold mb-1">이선생님</h3>
             <p class="text-base font-semibold mb-1">만 5세 담임</p>
             <p class="text-sm mb-1">보육경력 10년</p>
             <p class="text-sm opacity-80">아동학과 졸업, 보육교사 1급 자격증</p>
           </div>
           <div class="rounded-xl shadow-lg border border-secondary/10 bg-gradient-to-br from-secondary/90 to-primary/90 text-white backdrop-blur p-8 text-center transition hover:-translate-y-2 hover:shadow-2xl">
-            <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full bg-white/20 text-4xl" aria-hidden="true">
-              <i class="fas fa-user"></i>
-              <span class="sr-only">담임 선생님</span>
-            </div>
+            <img src="/public/images/art-01.jpg" alt="박선생님 사진" class="w-32 h-32 mx-auto mb-6 object-cover border-4 border-white shadow-md" />
             <h3 class="text-xl font-bold mb-1">박선생님</h3>
             <p class="text-base font-semibold mb-1">만 4세 담임</p>
             <p class="text-sm mb-1">보육경력 8년</p>

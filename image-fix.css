@@ -1,0 +1,48 @@
+/* 이미지 경로 문제 해결을 위한 CSS */
+.testimonial-slide img[src*="./image/"] {
+  content: url(/public/images/sample_img_03.jpg);
+}
+
+/* 백업 이미지 로드 방법 추가 */
+.testimonial-slide img {
+  background-image: url('/public/images/sample_img_03.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 96px;
+  min-width: 96px;
+}
+
+/* 텍스트 잘림 해결을 위한 추가 스타일 */
+.testimonial-slide {
+  height: auto !important;
+  min-height: auto !important;
+}
+
+.testimonial-slide .bg-white,
+.testimonial-slide .bg-gray-800 {
+  height: auto !important;
+  min-height: auto !important;
+}
+
+.testimonial-slide p {
+  word-break: keep-all !important;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  display: block !important;
+  max-height: none !important;
+  height: auto !important;
+  line-height: 1.7 !important;
+}
+
+/* 카카오맵 스타일 */
+#kakao-map {
+  height: 400px !important;
+  width: 100% !important;
+}
+
+.map-loading-placeholder {
+  position: relative !important;
+  z-index: 1 !important;
+  min-height: 300px !important;
+}

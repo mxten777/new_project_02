@@ -165,11 +165,13 @@ class ContactComponent extends HTMLElement {
               <!-- 카카오맵 API 연동 -->
               <div id="kakao-map" class="w-full h-full">
                 <!-- 카카오맵이 로딩되는 동안 표시할 placeholder -->
-                <div class="absolute inset-0 bg-gray-200 dark:bg-gray-700 flex items-center justify-center map-loading-placeholder">
-                  <p class="text-gray-500 dark:text-gray-400 text-center p-4">
-                    <i class="fas fa-map-marked-alt text-4xl mb-4"></i><br>
-                    지도를 불러오는 중입니다...
-                  </p>
+                <div class="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-2xl p-4">
+                  <div class="text-center">
+                    <i class="fas fa-map-marked-alt text-4xl text-primary dark:text-yellow-300 mb-4"></i>
+                    <p class="text-gray-700 dark:text-gray-300">아이뜨락 어린이집</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mt-2">서울특별시 강남구 테헤란로 123</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Tel. 02-123-4567</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -186,96 +188,33 @@ class ContactComponent extends HTMLElement {
     
     // 폼 제출 처리 및 카카오맵 로드
     this.setupFormHandler();
-    this.loadKakaoMap();
+    this.tryLoadKakaoMap();
   }
   
-  loadKakaoMap() {
-    // DOM이 완전히 로드된 후 카카오맵 API 로드
-    setTimeout(() => {
-      // 카카오맵 API 스크립트 추가 - 실제 API 키로 교체 필요
-      if (!document.querySelector('script[src*="kakao.maps.api"]')) {
-        const script = document.createElement('script');
-        // 애플리케이션에 맞는 유효한 API 키로 교체해야 합니다
-        script.src = 'https://dapi.kakao.com/v2/maps/sdk.js?appkey=fe1eba2b6639bcda24ccb40f4e4afbdd&autoload=false';
-        script.onload = () => {
-          kakao.maps.load(() => {
-            this.initializeMap();
-          });
-        };
-        document.head.appendChild(script);
-      } else if (window.kakao && window.kakao.maps) {
-        // 이미 로드된 경우
-        this.initializeMap();
-      }
-    }, 500);
-  }
-  
-  initializeMap() {
-    const mapContainer = this.querySelector('#kakao-map');
-    if (!mapContainer) return;
-    
-    // 로딩 placeholder 제거
-    const placeholder = mapContainer.querySelector('.map-loading-placeholder');
-    if (placeholder) placeholder.remove();
-    
-    // 아이뜨락 어린이집 가상 위치 좌표 (실제 위치로 교체 필요)
-    // 현재는 서울시청 좌표를 사용합니다
-    const latitude = 37.566826;
-    const longitude = 126.978656;
-    
-    // 지도 옵션 설정
-    const mapOptions = {
-      center: new kakao.maps.LatLng(latitude, longitude),
-      level: 3 // 지도 확대 레벨 (1~14, 낮을수록 확대)
-    };
-    
-    // 지도 생성
-    const map = new kakao.maps.Map(mapContainer, mapOptions);
-    
-    // 마커 생성
-    const markerPosition = new kakao.maps.LatLng(latitude, longitude);
-    const marker = new kakao.maps.Marker({
-      position: markerPosition
-    });
-    
-    // 지도에 마커 표시
-    marker.setMap(map);
-    
-    // 인포윈도우 생성
-    const infoWindowContent = '<div style="padding:10px;width:220px;text-align:center;font-weight:bold;">아이뜨락 어린이집</div>';
-    const infoWindow = new kakao.maps.InfoWindow({
-      content: infoWindowContent,
-      removable: true
-    });
-    
-    // 인포윈도우 표시
-    infoWindow.open(map, marker);
-    
-    // 지도 크기 변경 시 리사이즈 대응
-    window.addEventListener('resize', () => {
-      map.relayout();
-    });
-    
-    // 지도 컨트롤 추가
-    const zoomControl = new kakao.maps.ZoomControl();
-    map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-    
-    const mapTypeControl = new kakao.maps.MapTypeControl();
-    map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+  tryLoadKakaoMap() {
+    // OpenStreetMap iframe 적용 (API키 불필요)
+    var mapContainer = document.getElementById('kakao-map');
+    if (mapContainer) {
+      mapContainer.innerHTML = `
+        <iframe width="100%" height="320" style="border-radius:1rem;border:1px solid #ccc;" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=127.068815%2C37.250601%2C127.072815%2C37.254601&amp;layer=mapnik&amp;marker=37.252601%2C127.070815"></iframe>
+        <div style="margin-top:12px; font-size:1.05rem; color:#444; font-weight:500;">
+          경기 수원시 영통구 중부대로271번길 27-9<br>원천주공아파트 102동 107호
+        </div>
+        <small><a href="https://www.openstreetmap.org/?mlat=37.252601&amp;mlon=127.070815#map=18/37.252601/127.070815" target="_blank">지도 크게 보기 (OpenStreetMap)</a></small>
+      `;
+    }
   }
   
   setupFormHandler() {
     // DOM이 완전히 로드된 후 실행
-    setTimeout(() => {
-      const form = this.querySelector('#contact-form');
-      const formMessage = this.querySelector('#form-message');
+    setTimeout(function() {
+      var form = document.getElementById('contact-form');
+      var formMessage = document.getElementById('form-message');
       
       if (form) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', function(e) {
           e.preventDefault();
-          
-          // 실제 구현 시 여기에 폼 데이터 전송 코드를 추가하세요
-          // 예시: API 호출 또는 이메일 전송 서비스 연동
           
           // 성공 메시지 표시 (데모용)
           if (formMessage) {
@@ -287,7 +226,7 @@ class ContactComponent extends HTMLElement {
             form.reset();
             
             // 3초 후 메시지 숨김
-            setTimeout(() => {
+            setTimeout(function() {
               formMessage.classList.add('hidden');
             }, 3000);
           }

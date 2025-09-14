@@ -1,5 +1,43 @@
 // DOM 로드 완료 후 실행
 document.addEventListener("DOMContentLoaded", function () {
+  // 헤더 다크모드 토글 버튼 동기화
+  const darkModeToggleHeader = document.getElementById('darkModeToggleHeader');
+  const darkModeIconHeader = document.getElementById('darkModeIconHeader');
+  const darkModeToggleMain = document.getElementById('darkModeToggle');
+  const darkModeIconMain = document.getElementById('darkModeIcon');
+
+  function setDarkModeUI(isDark) {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+      if (darkModeIconHeader) darkModeIconHeader.classList.remove('fa-moon'), darkModeIconHeader.classList.add('fa-sun');
+      if (darkModeIconMain) darkModeIconMain.classList.remove('fa-moon'), darkModeIconMain.classList.add('fa-sun');
+    } else {
+      document.documentElement.classList.remove('dark');
+      if (darkModeIconHeader) darkModeIconHeader.classList.remove('fa-sun'), darkModeIconHeader.classList.add('fa-moon');
+      if (darkModeIconMain) darkModeIconMain.classList.remove('fa-sun'), darkModeIconMain.classList.add('fa-moon');
+    }
+  }
+
+  function toggleDarkMode() {
+    const isDark = !document.documentElement.classList.contains('dark');
+    setDarkModeUI(isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  }
+
+  if (darkModeToggleHeader) {
+    darkModeToggleHeader.addEventListener('click', toggleDarkMode);
+  }
+  if (darkModeToggleMain) {
+    darkModeToggleMain.addEventListener('click', toggleDarkMode);
+  }
+
+  // 초기 테마 적용
+  const userTheme = localStorage.getItem('theme');
+  if (userTheme === 'dark' || (!userTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    setDarkModeUI(true);
+  } else {
+    setDarkModeUI(false);
+  }
   // 서비스 워커 등록
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", function () {

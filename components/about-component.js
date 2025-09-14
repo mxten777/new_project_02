@@ -53,7 +53,7 @@ class AboutComponent extends HTMLElement {
             <div class="flex justify-center items-center">
               <div class="relative group">
                 <img 
-                  src="/image/sample_img_03.jpg" 
+                  src="/public/images/watch-02.jpg" 
                   alt="어린이집 전경" 
                   class="w-[320px] h-[240px] md:w-[350px] md:h-[260px] object-cover rounded-2xl shadow-xl transition-transform duration-500 group-hover:scale-105" 
                   loading="lazy"

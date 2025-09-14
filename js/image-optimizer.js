@@ -9,11 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initLazyLoading();
   
   // 이미지 WebP 지원 확인 및 최적화
-  checkWebPSupport().then(supported => {
-    if (supported) {
-      convertImagesToWebP();
-    }
-  });
+  // WebP 변환 기능 비활성화: jpg/png만 사용
+  // checkWebPSupport().then(supported => {
+  //   if (supported) {
+  //     convertImagesToWebP();
+  //   }
+  // });
 });
 
 /**

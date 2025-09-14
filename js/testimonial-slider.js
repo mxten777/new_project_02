@@ -2,21 +2,30 @@
  * 테스티모니얼 슬라이더 기능
  * 후기 슬라이더 기능을 처리하는 스크립트
  */
-document.addEventListener('DOMContentLoaded', function() {
-  initTestimonialSlider();
-});
+// 웹 컴포넌트에서 초기화하므로 자동 초기화 비활성화
+// document.addEventListener('DOMContentLoaded', function() {
+//   initTestimonialSlider();
+// });
 
 function initTestimonialSlider() {
   const slider = document.querySelector('.testimonial-slider');
-  if (!slider) return;
-  
+  if (!slider) {
+    console.warn('[슬라이더] .testimonial-slider 요소를 찾을 수 없습니다.');
+    return;
+  }
   const track = slider.querySelector('.testimonial-track');
   const slides = slider.querySelectorAll('.testimonial-slide');
   const prevButton = slider.querySelector('.testimonial-prev');
   const nextButton = slider.querySelector('.testimonial-next');
   const dotsContainer = slider.querySelector('.testimonial-dots');
-  
-  if (!track || !slides.length) return;
+  console.log('[슬라이더] 슬라이드 개수:', slides.length);
+  slides.forEach((slide, idx) => {
+    console.log(`[슬라이더] slide #${idx} 내용:`, slide.innerText.slice(0, 40));
+  });
+  if (!track || !slides.length) {
+    console.warn('[슬라이더] track 또는 slides가 비어있음');
+    return;
+  }
   
   let currentIndex = 0;
   const slideCount = slides.length;

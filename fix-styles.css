@@ -1,0 +1,33 @@
+/* 테스티모니얼 슬라이더를 위한 추가 스타일 */
+.testimonial-slide .bg-white {
+  height: auto !important;
+}
+
+.testimonial-slide .flex {
+  align-items: flex-start !important;
+}
+
+.testimonial-slide p {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  display: block !important;
+  word-break: keep-all !important;
+  max-height: none !important;
+  line-height: 1.6 !important;
+}
+
+/* 카카오맵을 위한 스타일 */
+#kakao-map {
+  height: 400px !important;
+  width: 100% !important;
+  display: block !important;
+  z-index: 1 !important;
+}
+
+.map-loading-placeholder {
+  height: 400px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}

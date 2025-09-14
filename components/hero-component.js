@@ -25,7 +25,7 @@ class HeroComponent extends HTMLElement {
                 <a href="#programs" class="btn btn-primary py-3 px-8 rounded-full font-bold text-white hover:shadow-lg hover:scale-105 transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary">
                   프로그램 살펴보기
                 </a>
-                <a href="#contact" class="btn-secondary py-3 px-8 rounded-full font-bold text-primary dark:text-yellow-300 bg-white dark:bg-gray-800 border-2 border-primary dark:border-yellow-300 hover:bg-primary/10 dark:hover:bg-gray-700 hover:shadow-lg transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary">
+                <a href="#contact" class="btn btn-primary py-3 px-8 rounded-full font-bold text-white hover:shadow-lg hover:scale-105 transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary">
                   상담 신청하기
                 </a>
               </div>

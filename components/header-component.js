@@ -16,24 +16,29 @@ class HeaderComponent extends HTMLElement {
             <span class="text-accent">아이</span>뜨락 <span class="hidden md:inline">어린이집</span>
           </a>
 
+          <!-- 메인 내비+다크모드 토글 -->
+          <div class="flex items-center gap-4">
+            <nav>
+              <ul class="nav-menu flex gap-6 md:static md:flex-row md:shadow-none">
+                <li><a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-yellow-300 transition-colors">소개</a></li>
+                <li><a href="#programs" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-yellow-300 transition-colors">프로그램</a></li>
+                <li><a href="#facilities" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-yellow-300 transition-colors">시설</a></li>
+                <li><a href="#teachers" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-yellow-300 transition-colors">교사진</a></li>
+                <li><a href="#testimonials" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-yellow-300 transition-colors">후기</a></li>
+                <li><a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-yellow-300 transition-colors">문의</a></li>
+              </ul>
+            </nav>
+            <button id="darkModeToggleHeader" aria-label="다크모드 전환" class="flex w-10 h-10 rounded-full bg-white/80 dark:bg-gray-800/80 shadow text-xl text-primary dark:text-yellow-300 border border-primary/20 dark:border-yellow-300/30 items-center justify-center hover:bg-primary/10 dark:hover:bg-gray-700/80 transition-colors duration-300 ml-2">
+              <i id="darkModeIconHeader" class="fas fa-moon"></i>
+            </button>
+          </div>
+
           <!-- 모바일 메뉴 토글 -->
           <div class="hamburger flex flex-col gap-1.5 cursor-pointer md:hidden">
             <span class="bar w-6 h-0.5 bg-gray-800 dark:bg-gray-200 transition-all duration-300"></span>
             <span class="bar w-6 h-0.5 bg-gray-800 dark:bg-gray-200 transition-all duration-300"></span>
             <span class="bar w-6 h-0.5 bg-gray-800 dark:bg-gray-200 transition-all duration-300"></span>
           </div>
-
-          <!-- 메인 내비게이션 -->
-          <nav>
-            <ul class="nav-menu flex gap-6 md:static md:flex-row md:shadow-none">
-              <li><a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-yellow-300 transition-colors">소개</a></li>
-              <li><a href="#programs" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-yellow-300 transition-colors">프로그램</a></li>
-              <li><a href="#facilities" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-yellow-300 transition-colors">시설</a></li>
-              <li><a href="#teachers" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-yellow-300 transition-colors">교사진</a></li>
-              <li><a href="#testimonials" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-yellow-300 transition-colors">후기</a></li>
-              <li><a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-yellow-300 transition-colors">문의</a></li>
-            </ul>
-          </nav>
         </div>
       </header>
     `;
