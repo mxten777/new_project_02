@@ -63,11 +63,29 @@
     }
   </style>
 </head>
-<body class="font-sans text-gray-900 bg-white dark:bg-gray-900 dark:text-white transition-colors duration-300">
-  <!-- 다크모드 토글 버튼 -->
-  <button id="darkModeToggle" aria-label="다크모드 전환" class="fixed top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/80 dark:bg-gray-800/80 shadow-lg flex items-center justify-center text-2xl text-primary dark:text-yellow-300 border border-primary/20 dark:border-yellow-300/30 transition-colors duration-300 hover:bg-primary/10 dark:hover:bg-gray-700/80">
-    <i id="darkModeIcon" class="fas fa-moon"></i>
-  </button>
+<body class="font-sans transition-colors duration-300 theme-light">
+  <!-- 위치별 토글 버튼 3종(선택용) -->
+  <!-- 위치별 토글 버튼 3종(20, 24, 28) + 숫자 표기 -->
+  <!-- PC: 중앙 상단(top-20)만 보이게, 나머지는 숨김 -->
+  <div class="fixed left-1/2 z-50 flex flex-col items-center" style="top:5rem;">
+    <div class="flex items-center mb-2 md:flex">
+        <button id="themeToggleTop36" aria-label="주/야 모드 전환(top-36)" class="fixed left-10 top-36 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-2xl text-yellow-500 border-2 border-yellow-400 hover:bg-yellow-50 transition-colors duration-200 md:flex">
+          <span id="themeIconTop36" class="fas fa-moon"></span>
+        </button>
+    </div>
+    <div class="flex items-center mb-2 hidden">
+      <button id="themeToggleTop24" aria-label="주/야 모드 전환(top-24)" class="w-14 h-14 rounded-full bg-white shadow-lg flex items-center justify-center text-3xl text-yellow-500 border-2 border-yellow-400 hover:bg-yellow-50 transition-colors duration-200 transform -translate-x-1/2 hidden">
+        <span id="themeIconTop24" class="fas fa-moon"></span>
+      </button>
+      <span class="ml-2 text-gray-700 text-lg font-bold hidden">24</span>
+    </div>
+    <div class="flex items-center hidden">
+      <button id="themeToggleTop28" aria-label="주/야 모드 전환(top-28)" class="w-14 h-14 rounded-full bg-white shadow-lg flex items-center justify-center text-3xl text-yellow-500 border-2 border-yellow-400 hover:bg-yellow-50 transition-colors duration-200 transform -translate-x-1/2 hidden">
+        <span id="themeIconTop28" class="fas fa-moon"></span>
+      </button>
+      <span class="ml-2 text-gray-700 text-lg font-bold hidden">28</span>
+    </div>
+  </div>
 
   <!-- 커스텀 스타일 - 텍스트 잘림 문제 해결 -->
   <style>
@@ -116,7 +134,7 @@
   <script src="js/page-optimizer.js" defer></script>
   <script src="js/image-optimizer.js" defer></script>
   <script src="js/testimonial-slider.js" defer></script>
-  <script src="script.js" defer></script>
+  <script src="./script.js" defer></script>
   
   <!-- 서비스 워커 등록 -->
   <script>
@@ -133,61 +151,6 @@
     }
   </script>
 
-  <script>
-    // 다크모드 토글 및 시스템 감지
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const darkModeIcon = document.getElementById('darkModeIcon');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-    function setDarkMode(on) {
-      document.documentElement.classList.toggle('dark', on);
-      darkModeIcon.className = on ? 'fas fa-sun' : 'fas fa-moon';
-      localStorage.setItem('darkMode', on ? 'on' : 'off');
-    }
-    // 초기 상태
-    const saved = localStorage.getItem('darkMode');
-    const systemDark = prefersDark.matches;
-    setDarkMode(saved === 'on' || (saved === null && systemDark));
-    
-    // 토글 클릭 이벤트
-    darkModeToggle.addEventListener('click', () => {
-      const isDark = document.documentElement.classList.contains('dark');
-      setDarkMode(!isDark);
-    });
-    
-    // 시스템 테마 변경 감지
-    prefersDark.addEventListener('change', (e) => {
-      const saved = localStorage.getItem('darkMode');
-      if (saved === null) {
-        setDarkMode(e.matches);
-      }
-    });
-    
-    // 스크롤 애니메이션
-    document.addEventListener('DOMContentLoaded', function() {
-      const animateElements = document.querySelectorAll('.animate-fade-in');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -10% 0px'
-      });
-      
-      animateElements.forEach(el => {
-        observer.observe(el);
-      });
-    });
-    
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-  </script>
+  <!-- (중복 방지: 다크모드 토글 인라인 스크립트 제거, script.js만 사용) -->
 </body>
 </html>

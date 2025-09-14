@@ -28,9 +28,6 @@ class HeaderComponent extends HTMLElement {
                 <li><a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-yellow-300 transition-colors">문의</a></li>
               </ul>
             </nav>
-            <button id="darkModeToggleHeader" aria-label="다크모드 전환" class="flex w-10 h-10 rounded-full bg-white/80 dark:bg-gray-800/80 shadow text-xl text-primary dark:text-yellow-300 border border-primary/20 dark:border-yellow-300/30 items-center justify-center hover:bg-primary/10 dark:hover:bg-gray-700/80 transition-colors duration-300 ml-2">
-              <i id="darkModeIconHeader" class="fas fa-moon"></i>
-            </button>
           </div>
 
           <!-- 모바일 메뉴 토글 -->
