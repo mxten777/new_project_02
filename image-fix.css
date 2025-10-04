@@ -1,11 +1,11 @@
 /* 이미지 경로 문제 해결을 위한 CSS */
 .testimonial-slide img[src*="./image/"] {
-  content: url(/public/images/sample_img_03.jpg);
+  content: url(/image/20240909_05.jpg);
 }
 
 /* 백업 이미지 로드 방법 추가 */
 .testimonial-slide img {
-  background-image: url('/public/images/sample_img_03.jpg');
+  background-image: url('/image/20240909_05.jpg');
   background-size: cover;
   background-position: center;
   min-height: 96px;

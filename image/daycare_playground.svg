@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" style="background: linear-gradient(135deg, #87CEEB 0%, #98FB98 100%);">
+  <!-- 하늘과 잔디 배경 -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#90EE90;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#32CD32;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 하늘 -->
+  <rect width="800" height="400" fill="url(#skyGradient)"/>
+  
+  <!-- 잔디 -->
+  <rect y="400" width="800" height="200" fill="url(#grassGradient)"/>
+  
+  <!-- 구름들 -->
+  <g fill="#FFFFFF" opacity="0.8">
+    <ellipse cx="150" cy="100" rx="40" ry="25"/>
+    <ellipse cx="170" cy="90" rx="35" ry="20"/>
+    <ellipse cx="190" cy="100" rx="30" ry="18"/>
+    
+    <ellipse cx="600" cy="80" rx="35" ry="22"/>
+    <ellipse cx="620" cy="70" rx="30" ry="18"/>
+    <ellipse cx="640" cy="80" rx="25" ry="15"/>
+  </g>
+  
+  <!-- 태양 -->
+  <circle cx="700" cy="80" r="30" fill="#FFD700"/>
+  <g stroke="#FFD700" stroke-width="3" opacity="0.7">
+    <line x1="700" y1="30" x2="700" y2="10"/>
+    <line x1="750" y1="80" x2="770" y2="80"/>
+    <line x1="700" y1="130" x2="700" y2="150"/>
+    <line x1="650" y1="80" x2="630" y2="80"/>
+    <line x1="735" y1="45" x2="750" y2="30"/>
+    <line x1="735" y1="115" x2="750" y2="130"/>
+    <line x1="665" y1="115" x2="650" y2="130"/>
+    <line x1="665" y1="45" x2="650" y2="30"/>
+  </g>
+  
+  <!-- 놀이터 미끄럼틀 -->
+  <g>
+    <!-- 미끄럼틀 계단 -->
+    <rect x="100" y="300" width="80" height="120" fill="#8B4513" rx="5"/>
+    <rect x="110" y="320" width="60" height="8" fill="#654321"/>
+    <rect x="110" y="340" width="60" height="8" fill="#654321"/>
+    <rect x="110" y="360" width="60" height="8" fill="#654321"/>
+    <rect x="110" y="380" width="60" height="8" fill="#654321"/>
+    
+    <!-- 미끄럼틀 플랫폼 -->
+    <rect x="180" y="280" width="60" height="40" fill="#FF6B6B" rx="5"/>
+    
+    <!-- 미끄럼틀 -->
+    <path d="M 240 300 Q 300 310 350 350 Q 380 370 400 420" stroke="#4ECDC4" stroke-width="25" fill="none" stroke-linecap="round"/>
+    
+    <!-- 안전 난간 -->
+    <rect x="175" y="270" width="5" height="30" fill="#FF6B6B"/>
+    <rect x="235" y="270" width="5" height="30" fill="#FF6B6B"/>
+    <rect x="175" y="270" width="65" height="5" fill="#FF6B6B"/>
+  </g>
+  
+  <!-- 그네 -->
+  <g>
+    <!-- 그네 프레임 -->
+    <path d="M 500 420 L 520 280 L 580 280 L 600 420" stroke="#8B4513" stroke-width="8" fill="none"/>
+    <rect x="520" y="275" width="60" height="10" fill="#8B4513" rx="5"/>
+    
+    <!-- 그네 줄 -->
+    <line x1="540" y1="285" x2="535" y2="380" stroke="#654321" stroke-width="3"/>
+    <line x1="560" y1="285" x2="565" y2="380" stroke="#654321" stroke-width="3"/>
+    
+    <!-- 그네 좌석 -->
+    <rect x="525" y="380" width="40" height="8" fill="#FF6B6B" rx="4"/>
+  </g>
+  
+  <!-- 시소 -->
+  <g>
+    <!-- 시소 받침대 -->
+    <polygon points="450,410 470,410 460,430" fill="#8B4513"/>
+    
+    <!-- 시소 판 -->
+    <rect x="380" y="405" width="160" height="10" fill="#4ECDC4" rx="5"/>
+    
+    <!-- 시소 손잡이 -->
+    <rect x="385" y="395" width="5" height="20" fill="#FF6B6B"/>
+    <rect x="530" y="395" width="5" height="20" fill="#FF6B6B"/>
+  </g>
+  
+  <!-- 나무들 -->
+  <g>
+    <!-- 나무 1 -->
+    <rect x="650" y="350" width="15" height="70" fill="#8B4513"/>
+    <circle cx="657" cy="340" r="30" fill="#228B22"/>
+    
+    <!-- 나무 2 -->
+    <rect x="750" y="360" width="12" height="60" fill="#8B4513"/>
+    <circle cx="756" cy="350" r="25" fill="#32CD32"/>
+  </g>
+  
+  <!-- 벤치 -->
+  <g>
+    <rect x="50" y="450" width="80" height="8" fill="#8B4513"/>
+    <rect x="55" y="440" width="5" height="18" fill="#8B4513"/>
+    <rect x="120" y="440" width="5" height="18" fill="#8B4513"/>
+    <rect x="55" y="430" width="70" height="10" fill="#8B4513"/>
+  </g>
+  
+  <!-- 어린이 실루엣들 -->
+  <g>
+    <!-- 아이 1 (미끄럼틀 위) -->
+    <circle cx="210" cy="270" r="8" fill="#FFE4B5"/>
+    <rect x="205" y="278" width="10" height="15" fill="#FF69B4"/>
+    <rect x="207" y="293" width="3" height="12" fill="#FFE4B5"/>
+    <rect x="212" y="293" width="3" height="12" fill="#FFE4B5"/>
+    
+    <!-- 아이 2 (그네) -->
+    <circle cx="550" cy="365" r="8" fill="#FFE4B5"/>
+    <rect x="545" y="373" width="10" height="15" fill="#87CEEB"/>
+    <rect x="547" y="388" width="3" height="12" fill="#FFE4B5"/>
+    <rect x="552" y="388" width="3" height="12" fill="#FFE4B5"/>
+  </g>
+  
+  <!-- 안전 표시 -->
+  <g>
+    <rect x="20" y="520" width="200" height="60" fill="#FFFFFF" opacity="0.9" rx="10"/>
+    <text x="120" y="545" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FF6B6B">안전한 놀이터</text>
+    <text x="120" y="565" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">아이들의 안전을 최우선으로</text>
+  </g>
+</svg>

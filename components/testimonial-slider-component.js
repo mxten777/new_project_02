@@ -1,6 +1,7 @@
 /**
  * 테스티모니얼 슬라이더 컴포넌트
- * 고객 후기를 표시하는 슬라이더
+ * 고객 후기를 표시하는        <!-- 대표 이미지 갤러리 제거 - 슬라이더 내부에 이미지가 있으므로 중복 방지 -->
+        <div class="mb-12"></div>
  */
 class TestimonialSliderComponent extends HTMLElement {
   constructor() {
@@ -14,19 +15,19 @@ class TestimonialSliderComponent extends HTMLElement {
         text: `아이가 어린이집에 다닌 후 사회성이 크게 향상되었어요. 선생님들의 세심한 관심과 전문적인 교육 방식에 너무 만족합니다. 특히 창의적인 활동들이 아이의 상상력을 키워주는 것 같아요.`,
         name: '김지은 학부모',
         info: '만 4세 민준이 엄마',
-        img: '/public/images/sample_img_03.jpg',
+        img: '/image/sample_img_03.jpg',
       },
       {
         text: `우리 아이가 매일 어린이집에 가는 것을 기대해요. 선생님들의 따뜻한 보살핌과 다양한 활동들이 아이의 성장에 큰 도움이 되고 있습니다. 특히 자연 친화적인 교육 방식이 마음에 들어요.`,
         name: '박현우 학부모',
         info: '만 3세 서연이 아빠',
-        img: '/public/images/pinterest_29.jpg',
+        img: '/image/pinterest_29.jpg',
       },
       {
         text: `처음에는 걱정이 많았는데, 아이뜨락 어린이집의 투명한 운영 방식과 열린 소통에 안심이 되었어요. 급식 메뉴도 영양사가 꼼꼼히 관리하고, 위생 상태도 항상 청결해서 믿고 맡길 수 있어요.`,
         name: '이수진 학부모',
         info: '만 5세 지호 엄마',
-        img: '/public/images/20240909_05.jpg',
+        img: '/image/20240909_05.jpg',
       },
     ];
 
@@ -34,7 +35,16 @@ class TestimonialSliderComponent extends HTMLElement {
     let html = `
       <section id="testimonials" class="py-20 bg-white dark:bg-gray-900">
         <div class="max-w-3xl mx-auto px-4">
-          <h2 class="text-3xl md:text-4xl font-bold text-center text-primary dark:text-yellow-300 mb-8">부모님 후기</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-center text-primary dark:text-yellow-300 mb-8 flex items-center justify-center gap-3">
+            <span><i class="fas fa-comments text-accent text-4xl"></i></span>
+            부모님 후기
+          </h2>
+          <!-- 대표 이미지 갤러리 -->
+          <div class="mb-12 flex flex-col md:flex-row gap-8 items-center justify-center" role="group" aria-label="후기 대표 이미지 갤러리">
+            <img src="/image/20240909_05.jpg" alt="후기 대표 이미지1" class="w-32 h-32 object-cover rounded-2xl shadow-lg focus:outline-accent focus:ring-4 focus:ring-accent/40 transition-transform duration-300 hover:scale-105 active:scale-95" loading="lazy" tabindex="0" />
+            <img src="/image/pinterest_29.jpg" alt="후기 대표 이미지2" class="w-32 h-32 object-cover rounded-2xl shadow-lg focus:outline-accent focus:ring-4 focus:ring-accent/40 transition-transform duration-300 hover:scale-105 active:scale-95" loading="lazy" tabindex="0" />
+            <img src="/image/sample_img_03.jpg" alt="후기 대표 이미지3" class="w-32 h-32 object-cover rounded-2xl shadow-lg focus:outline-accent focus:ring-4 focus:ring-accent/40 transition-transform duration-300 hover:scale-105 active:scale-95" loading="lazy" tabindex="0" />
+          </div>
           <div class="space-y-8">
             ${testimonials.map(t => `
               <div class="flex flex-col md:flex-row items-start gap-6 bg-gray-100 dark:bg-gray-800 rounded-xl p-6 shadow">

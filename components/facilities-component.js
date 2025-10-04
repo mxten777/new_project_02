@@ -1,5 +1,8 @@
 /**
- * Facilities(시설) 컴포넌트
+ * Facilities(시          <!-- 대표 이미지 갤러리 -->
+          <div class="mb-12 flex flex-col md:flex-row gap-8 items-center justify-center" role="group" aria-label="시설 소개 이미지">
+            <img src="/image/20240909_05.jpg" alt="안전한 놀이 공간" class="w-64 h-48 object-cover rounded-2xl shadow-lg focus:outline-primary focus:ring-4 focus:ring-primary/40 transition-transform duration-300 hover:scale-105 active:scale-95" loading="lazy" tabindex="0" />
+          </div>트
  * 교육 시설 및 환경 소개 섹션
  */
 class FacilitiesComponent extends HTMLElement {
@@ -12,8 +15,17 @@ class FacilitiesComponent extends HTMLElement {
       <section id="facilities" class="relative py-20 bg-white dark:bg-gray-800 overflow-hidden section-animate">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-primary dark:text-yellow-300 drop-shadow-lg tracking-tight">최상의 교육 환경</h2>
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-primary dark:text-yellow-300 drop-shadow-lg tracking-tight flex items-center justify-center gap-3">
+              <span><i class="fas fa-school text-secondary text-4xl"></i></span>
+              최상의 교육 환경
+            </h2>
             <p class="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed font-medium">아이들의 안전과 발달을 위한 특별한 공간</p>
+          </div>
+          <!-- 대표 이미지 갤러리 -->
+          <div class="mb-12 flex flex-col md:flex-row gap-8 items-center justify-center" role="group" aria-label="시설 대표 이미지 갤러리">
+            <img src="/image/20240909_05.jpg" alt="놀이터 대표 이미지" class="w-56 h-40 object-cover rounded-2xl shadow-lg focus:outline-primary focus:ring-4 focus:ring-primary/40 transition-transform duration-300 hover:scale-105 active:scale-95" loading="lazy" tabindex="0" />
+            <img src="/image/pinterest_29.jpg" alt="교실 대표 이미지" class="w-56 h-40 object-cover rounded-2xl shadow-lg focus:outline-primary focus:ring-4 focus:ring-primary/40 transition-transform duration-300 hover:scale-105 active:scale-95" loading="lazy" tabindex="0" />
+            <img src="/image/sample_img_03.jpg" alt="급식실 대표 이미지" class="w-56 h-40 object-cover rounded-2xl shadow-lg focus:outline-primary focus:ring-4 focus:ring-primary/40 transition-transform duration-300 hover:scale-105 active:scale-95" loading="lazy" tabindex="0" />
           </div>
 
           <!-- 시설 갤러리 - 큰 사진 / 설명 교차 배치 -->
@@ -22,7 +34,7 @@ class FacilitiesComponent extends HTMLElement {
             <div class="flex flex-col md:flex-row items-center md:space-x-10">
               <div class="w-full md:w-1/2 mb-8 md:mb-0">
                 <div class="relative rounded-3xl shadow-2xl overflow-hidden transform transition-transform duration-500 hover:scale-[1.02] group">
-                  <img src="/public/images/sphere-02.jpg" alt="안전한 놀이터" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                  <img src="/image/20240909_05.jpg" alt="안전한 놀이터" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
                   <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-60"></div>
                   <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white transform transition-transform duration-300">
                     <span class="inline-block px-4 py-1 bg-primary dark:bg-yellow-300 text-white dark:text-gray-900 rounded-full text-sm font-bold mb-3 shadow-lg">안전한 환경</span>
@@ -60,7 +72,7 @@ class FacilitiesComponent extends HTMLElement {
             <div class="flex flex-col md:flex-row-reverse items-center md:space-x-reverse md:space-x-10">
               <div class="w-full md:w-1/2 mb-8 md:mb-0">
                 <div class="relative rounded-3xl shadow-2xl overflow-hidden transform transition-transform duration-500 hover:scale-[1.02] group">
-                  <img src="/public/images/pinterest_29.jpg" alt="모던한 교실 환경" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                  <img src="/image/pinterest_29.jpg" alt="모던한 교실 환경" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
                   <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-60"></div>
                   <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white transform transition-transform duration-300">
                     <span class="inline-block px-4 py-1 bg-secondary dark:bg-secondary text-white dark:text-gray-900 rounded-full text-sm font-bold mb-3 shadow-lg">최적의 환경</span>
@@ -98,7 +110,7 @@ class FacilitiesComponent extends HTMLElement {
             <div class="flex flex-col md:flex-row items-center md:space-x-10">
               <div class="w-full md:w-1/2 mb-8 md:mb-0">
                 <div class="relative rounded-3xl shadow-2xl overflow-hidden transform transition-transform duration-500 hover:scale-[1.02] group">
-                  <img src="/public/images/ring-green.jpg" alt="건강한 급식 시설" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                  <img src="/image/20240909_05.jpg" alt="건강한 급식 시설" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
                   <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-60"></div>
                   <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white transform transition-transform duration-300">
                     <span class="inline-block px-4 py-1 bg-accent dark:bg-accent text-white dark:text-gray-900 rounded-full text-sm font-bold mb-3 shadow-lg">건강한 식단</span>

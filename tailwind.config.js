@@ -11,7 +11,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Noto Sans KR', 'sans-serif'],
+        sans: [
+          'Inter',
+          'Pretendard',
+          'Rubik',
+          'Noto Sans KR',
+          'Apple SD Gothic Neo',
+          'Malgun Gothic',
+          'sans-serif',
+        ],
       },
       colors: {
         primary: '#ff6b6b',

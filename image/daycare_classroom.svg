@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" style="background: #F0F8FF;">
+  <!-- 교실 배경 -->
+  <rect width="800" height="600" fill="url(#classroomGradient)"/>
+  
+  <defs>
+    <linearGradient id="classroomGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0F8FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E6F3FF;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="floorPattern" patternUnits="userSpaceOnUse" width="40" height="40">
+      <rect width="40" height="40" fill="#E8E8E8"/>
+      <rect width="38" height="38" x="1" y="1" fill="#F5F5F5"/>
+    </pattern>
+  </defs>
+  
+  <!-- 바닥 -->
+  <rect y="500" width="800" height="100" fill="url(#floorPattern)"/>
+  
+  <!-- 벽면 -->
+  <rect x="0" y="0" width="800" height="500" fill="#FFF8DC"/>
+  
+  <!-- 창문들 -->
+  <g>
+    <rect x="50" y="50" width="120" height="80" fill="#87CEEB" stroke="#8B4513" stroke-width="4"/>
+    <line x1="110" y1="50" x2="110" y2="130" stroke="#8B4513" stroke-width="2"/>
+    <line x1="50" y1="90" x2="170" y2="90" stroke="#8B4513" stroke-width="2"/>
+    
+    <rect x="200" y="50" width="120" height="80" fill="#87CEEB" stroke="#8B4513" stroke-width="4"/>
+    <line x1="260" y1="50" x2="260" y2="130" stroke="#8B4513" stroke-width="2"/>
+    <line x1="200" y1="90" x2="320" y2="90" stroke="#8B4513" stroke-width="2"/>
+  </g>
+  
+  <!-- 게시판 -->
+  <rect x="450" y="60" width="200" height="120" fill="#90EE90" stroke="#654321" stroke-width="3"/>
+  <rect x="460" y="70" width="180" height="100" fill="#FFFFFF"/>
+  
+  <!-- 게시판 내용 (그림들) -->
+  <g>
+    <rect x="470" y="80" width="30" height="20" fill="#FFB6C1"/>
+    <rect x="510" y="80" width="30" height="20" fill="#98FB98"/>
+    <rect x="550" y="80" width="30" height="20" fill="#87CEEB"/>
+    <rect x="590" y="80" width="30" height="20" fill="#DDA0DD"/>
+    
+    <rect x="470" y="110" width="30" height="20" fill="#F0E68C"/>
+    <rect x="510" y="110" width="30" height="20" fill="#FFA07A"/>
+    <rect x="550" y="110" width="30" height="20" fill="#20B2AA"/>
+    <rect x="590" y="110" width="30" height="20" fill="#FF69B4"/>
+    
+    <rect x="470" y="140" width="30" height="20" fill="#FFE4E1"/>
+    <rect x="510" y="140" width="30" height="20" fill="#E0FFFF"/>
+    <rect x="550" y="140" width="30" height="20" fill="#F5DEB3"/>
+    <rect x="590" y="140" width="30" height="20" fill="#D8BFD8"/>
+  </g>
+  
+  <!-- 작은 테이블들 -->
+  <g>
+    <!-- 테이블 1 -->
+    <ellipse cx="150" cy="300" rx="50" ry="30" fill="#8B4513"/>
+    <rect x="145" y="290" width="10" height="40" fill="#654321"/>
+    
+    <!-- 테이블 2 -->
+    <ellipse cx="300" cy="300" rx="50" ry="30" fill="#8B4513"/>
+    <rect x="295" y="290" width="10" height="40" fill="#654321"/>
+    
+    <!-- 테이블 3 -->
+    <ellipse cx="450" cy="300" rx="50" ry="30" fill="#8B4513"/>
+    <rect x="445" y="290" width="10" height="40" fill="#654321"/>
+    
+    <!-- 테이블 4 -->
+    <ellipse cx="600" cy="300" rx="50" ry="30" fill="#8B4513"/>
+    <rect x="595" y="290" width="10" height="40" fill="#654321"/>
+  </g>
+  
+  <!-- 의자들 -->
+  <g fill="#FF6B6B">
+    <!-- 테이블 1 주변 의자 -->
+    <circle cx="120" cy="280" r="12"/>
+    <circle cx="120" cy="320" r="12"/>
+    <circle cx="180" cy="280" r="12"/>
+    <circle cx="180" cy="320" r="12"/>
+    
+    <!-- 테이블 2 주변 의자 -->
+    <circle cx="270" cy="280" r="12"/>
+    <circle cx="270" cy="320" r="12"/>
+    <circle cx="330" cy="280" r="12"/>
+    <circle cx="330" cy="320" r="12"/>
+    
+    <!-- 테이블 3 주변 의자 -->
+    <circle cx="420" cy="280" r="12"/>
+    <circle cx="420" cy="320" r="12"/>
+    <circle cx="480" cy="280" r="12"/>
+    <circle cx="480" cy="320" r="12"/>
+    
+    <!-- 테이블 4 주변 의자 -->
+    <circle cx="570" cy="280" r="12"/>
+    <circle cx="570" cy="320" r="12"/>
+    <circle cx="630" cy="280" r="12"/>
+    <circle cx="630" cy="320" r="12"/>
+  </g>
+  
+  <!-- 선생님 책상 -->
+  <rect x="680" y="200" width="80" height="50" fill="#654321"/>
+  <rect x="685" y="205" width="70" height="40" fill="#8B4513"/>
+  
+  <!-- 책장 -->
+  <rect x="50" y="400" width="150" height="100" fill="#8B4513"/>
+  <rect x="55" y="405" width="140" height="90" fill="#654321"/>
+  <line x1="55" y1="425" x2="195" y2="425" stroke="#8B4513" stroke-width="2"/>
+  <line x1="55" y1="445" x2="195" y2="445" stroke="#8B4513" stroke-width="2"/>
+  <line x1="55" y1="465" x2="195" y2="465" stroke="#8B4513" stroke-width="2"/>
+  <line x1="55" y1="485" x2="195" y2="485" stroke="#8B4513" stroke-width="2"/>
+  
+  <!-- 책들 -->
+  <g>
+    <rect x="60" y="408" width="8" height="15" fill="#FF6B6B"/>
+    <rect x="70" y="408" width="8" height="15" fill="#4ECDC4"/>
+    <rect x="80" y="408" width="8" height="15" fill="#FFD93D"/>
+    <rect x="90" y="408" width="8" height="15" fill="#95E1D3"/>
+    <rect x="100" y="408" width="8" height="15" fill="#F38BA8"/>
+    
+    <rect x="60" y="428" width="8" height="15" fill="#A8E6CF"/>
+    <rect x="70" y="428" width="8" height="15" fill="#FFB3BA"/>
+    <rect x="80" y="428" width="8" height="15" fill="#BFCFFF"/>
+    <rect x="90" y="428" width="8" height="15" fill="#FFFACD"/>
+    <rect x="100" y="428" width="8" height="15" fill="#FFE4E1"/>
+  </g>
+  
+  <!-- 장난감 상자 -->
+  <rect x="250" y="430" width="80" height="60" fill="#FF69B4"/>
+  <rect x="255" y="435" width="70" height="50" fill="#FFB6C1"/>
+  <circle cx="275" cy="450" r="8" fill="#FFD700"/>
+  <circle cx="295" cy="450" r="8" fill="#87CEEB"/>
+  <circle cx="315" cy="450" r="8" fill="#98FB98"/>
+  <circle cx="275" cy="470" r="8" fill="#DDA0DD"/>
+  <circle cx="295" cy="470" r="8" fill="#F0E68C"/>
+  <circle cx="315" cy="470" r="8" fill="#FFA07A"/>
+  
+  <!-- 아이들 캐릭터 -->
+  <g>
+    <!-- 아이 1 (테이블에 앉아 있는) -->
+    <circle cx="120" cy="270" r="10" fill="#FFE4B5"/>
+    <rect x="115" y="280" width="10" height="12" fill="#87CEEB"/>
+    
+    <!-- 아이 2 -->
+    <circle cx="330" cy="270" r="10" fill="#FFE4B5"/>
+    <rect x="325" y="280" width="10" height="12" fill="#FF69B4"/>
+    
+    <!-- 아이 3 -->
+    <circle cx="480" cy="270" r="10" fill="#FFE4B5"/>
+    <rect x="475" y="280" width="10" height="12" fill="#98FB98"/>
+    
+    <!-- 아이 4 (책장 근처) -->
+    <circle cx="160" cy="460" r="10" fill="#FFE4B5"/>
+    <rect x="155" y="470" width="10" height="12" fill="#DDA0DD"/>
+  </g>
+  
+  <!-- 선생님 -->
+  <g>
+    <circle cx="720" cy="180" r="12" fill="#FFE4B5"/>
+    <rect x="713" y="192" width="14" height="20" fill="#4ECDC4"/>
+    <rect x="715" y="212" width="5" height="15" fill="#FFE4B5"/>
+    <rect x="722" y="212" width="5" height="15" fill="#FFE4B5"/>
+  </g>
+  
+  <!-- 교실 라벨 -->
+  <rect x="300" y="450" width="200" height="50" fill="#FFFFFF" opacity="0.9" rx="10"/>
+  <text x="400" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FF6B6B">밝은 교실</text>
+  <text x="400" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">창의적 학습 공간</text>
+</svg>
