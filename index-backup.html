@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>아이뜨락 어린이집 | 아이들의 꿈이 자라는 곳</title>
+  <meta name="description" content="수원 아이뜨락 어린이집 - 아이들의 꿈과 상상력이 자라는 특별한 공간. 창의적 교육 프로그램과 안전한 환경으로 행복한 성장을 지원합니다." />
+  <meta name="keywords" content="어린이집, 수원, 유아교육, 아이뜨락, 창의교육, 안전보육, 유치원" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="아이뜨락 어린이집 | 아이들의 꿈이 자라는 곳" />
+  <meta property="og:description" content="창의적 교육과 따뜻한 보육으로 아이들의 무한한 가능성을 키워나가는 어린이집입니다." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aitrak-daycare.com" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'korean': ['Noto Sans KR', 'sans-serif'],
+            'playful': ['Fredoka', 'sans-serif'],
+          },
+          colors: {
+            'rainbow-red': '#FF6B6B',
+            'rainbow-orange': '#FF8E53',
+            'rainbow-yellow': '#FFDD59',
+            'rainbow-green': '#4ECDC4',
+            'rainbow-blue': '#45B7D1',
+            'rainbow-purple': '#A78BFA',
+            'warm-cream': '#FFF8F0',
+            'soft-gray': '#F7F9FC',
+            'deep-navy': '#2D3748',
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'bounce-gentle': 'bounce-gentle 2s infinite',
+            'slide-up': 'slide-up 0.8s ease-out',
+            'fade-in': 'fade-in 1s ease-out',
+          },
+          keyframes: {
+            'float': {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            'bounce-gentle': {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            'slide-up': {
+              '0%': { transform: 'translateY(30px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+            'fade-in': {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* 커스텀 스타일 */
+    .glass-effect {
+      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #45B7D1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .rainbow-border {
+      background: linear-gradient(45deg, #FF6B6B, #FF8E53, #FFDD59, #4ECDC4, #45B7D1, #A78BFA);
+      padding: 2px;
+      border-radius: 20px;
+    }
+    
+    .rainbow-border > div {
+      background: white;
+      border-radius: 18px;
+    }
+    
+    .section-fade-in {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    .section-fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* 다크모드 */
+    .dark .glass-effect {
+      background: rgba(45, 55, 72, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .dark .rainbow-border > div {
+      background: #0f172a;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    /* 다크모드 텍스트 개선 */
+    .dark .text-gray-600 {
+      color: #ffffff !important;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    .dark .text-gray-700 {
+      color: #ffffff !important;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    .dark .text-deep-navy {
+      color: #ffffff !important;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* 다크모드 추가 텍스트 대비 강화 */
+    .dark .text-gray-200 {
+      color: #ffffff !important;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+    
+    .dark .text-gray-300 {
+      color: #ffffff !important;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+    
+    .dark .text-gray-400 {
+      color: #f1f5f9 !important;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* 다크모드 히어로 섹션 특별 처리 */
+    .dark h1,
+    .dark .text-5xl,
+    .dark .text-7xl {
+      color: #ffffff !important;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    
+    /* 다크모드 부제목 강화 */
+    .dark .text-xl,
+    .dark .text-2xl {
+      color: #ffffff !important;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    }
+    
+    /* 다크모드 배경 개선 */
+    .dark .bg-white\/50 {
+      background: rgba(15, 23, 42, 0.95) !important;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+    }
+    
+    .dark .bg-white {
+      background: #0f172a !important;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    /* 다크모드 카드 배경 강화 */
+    .dark .bg-white\/95 {
+      background: rgba(15, 23, 42, 0.98) !important;
+    }
+    
+    .dark .bg-gray-700\/80 {
+      background: rgba(15, 23, 42, 0.95) !important;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    /* 다크모드 그라데이션 배경 강화 */
+    .dark .bg-gradient-to-br {
+      background: linear-gradient(to bottom right, #0f172a, #1e293b, #334155) !important;
+    }
+    
+    /* 다크모드 폼 요소 개선 */
+    .dark input,
+    .dark textarea {
+      background: #0f172a !important;
+      border-color: #475569 !important;
+      color: #ffffff !important;
+    }
+    
+    .dark input::placeholder,
+    .dark textarea::placeholder {
+      color: #cbd5e1 !important;
+    }
+    
+    .dark input:focus,
+    .dark textarea:focus {
+      border-color: #45B7D1 !important;
+      box-shadow: 0 0 0 3px rgba(69, 183, 209, 0.3) !important;
+      background: #1e293b !important;
+    }
+    
+    /* 로딩 스크린 */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #45B7D1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease-out;
+    }
+    
+    .loading-spinner {
+      width: 60px;
+      height: 60px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top: 3px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* 파티클 효과 */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      animation: particle-float 6s infinite linear;
+    }
+    
+    @keyframes particle-float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    
+    /* 개선된 카드 효과 */
+    .card-hover {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card-hover::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .card-hover:hover::before {
+      left: 100%;
+    }
+    
+    /* 스크롤 진행 바 */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #FF6B6B, #4ECDC4, #45B7D1);
+      z-index: 9999;
+      transition: width 0.3s ease;
+    }
+    
+    /* 텍스트 타이핑 효과 */
+    .typing-text {
+      overflow: hidden;
+      border-right: 3px solid;
+      white-space: nowrap;
+      animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+    
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #4ECDC4; }
+    }
+    
+    /* 3D 카드 효과 */
+    .card-3d {
+      perspective: 1000px;
+    }
+    
+    .card-3d-inner {
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    
+    .card-3d:hover .card-3d-inner {
+      transform: rotateY(5deg) rotateX(5deg);
+    }
+    
+    /* 글로우 효과 */
+    .glow-effect {
+      box-shadow: 0 0 20px rgba(69, 183, 209, 0.3);
+      transition: box-shadow 0.3s ease;
+    }
+    
+    .glow-effect:hover {
+      box-shadow: 0 0 40px rgba(69, 183, 209, 0.6);
+    }
+  </style>
+</head>
+
+<body class="font-korean bg-gradient-to-br from-warm-cream via-white to-soft-gray dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
+  
+  <!-- 로딩 스크린 -->
+  <div id="loadingScreen" class="loading-screen">
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-playful font-bold text-white mb-4">
+        <i class="fas fa-seedling mr-3"></i>
+        아이뜨락
+      </h1>
+      <p class="text-white/80 text-lg">아이들의 꿈이 자라는 곳</p>
+    </div>
+    <div class="loading-spinner"></div>
+  </div>
+  
+  <!-- 스크롤 진행 바 -->
+  <div id="scrollProgress" class="scroll-progress"></div>
+  
+  <!-- 파티클 배경 -->
+  <div class="particles" id="particles"></div>
+  
+  <!-- 🌟 네비게이션 -->
+  <nav class="fixed top-0 w-full z-50 glass-effect">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- 로고 -->
+        <div class="flex-shrink-0">
+          <h1 class="text-2xl font-playful font-bold gradient-text">
+            <i class="fas fa-seedling mr-2"></i>
+            아이뜨락
+          </h1>
+        </div>
+        
+        <!-- 데스크톱 메뉴 -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="#about" class="text-deep-navy dark:text-white hover:text-rainbow-blue transition-colors font-medium">소개</a>
+            <a href="#programs" class="text-deep-navy dark:text-white hover:text-rainbow-green transition-colors font-medium">프로그램</a>
+            <a href="#gallery" class="text-deep-navy dark:text-white hover:text-rainbow-yellow transition-colors font-medium">갤러리</a>
+            <a href="#news" class="text-deep-navy dark:text-white hover:text-rainbow-orange transition-colors font-medium">소식</a>
+            <a href="#contact" class="text-deep-navy dark:text-white hover:text-rainbow-red transition-colors font-medium">문의</a>
+          </div>
+        </div>
+        
+        <!-- 다크모드 토글 & 모바일 메뉴 -->
+        <div class="flex items-center space-x-4">
+          <button id="themeToggle" class="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors">
+            <i class="fas fa-moon text-deep-navy dark:text-white" id="themeIcon"></i>
+          </button>
+          <button id="mobileMenuToggle" class="md:hidden p-2">
+            <i class="fas fa-bars text-deep-navy dark:text-white"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 모바일 메뉴 -->
+    <div id="mobileMenu" class="md:hidden hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="#about" class="block px-3 py-2 rounded-md text-deep-navy dark:text-white hover:bg-rainbow-blue/20">소개</a>
+        <a href="#programs" class="block px-3 py-2 rounded-md text-deep-navy dark:text-white hover:bg-rainbow-green/20">프로그램</a>
+        <a href="#gallery" class="block px-3 py-2 rounded-md text-deep-navy dark:text-white hover:bg-rainbow-yellow/20">갤러리</a>
+        <a href="#news" class="block px-3 py-2 rounded-md text-deep-navy dark:text-white hover:bg-rainbow-orange/20">소식</a>
+        <a href="#contact" class="block px-3 py-2 rounded-md text-deep-navy dark:text-white hover:bg-rainbow-red/20">문의</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🌈 히어로 섹션 -->
+  <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+    <!-- 배경 애니메이션 -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute -top-40 -right-40 w-80 h-80 bg-rainbow-purple/20 rounded-full animate-float"></div>
+      <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-rainbow-yellow/20 rounded-full animate-float" style="animation-delay: -3s;"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-rainbow-green/20 rounded-full animate-float" style="animation-delay: -1.5s;"></div>
+    </div>
+    
+    <!-- 메인 콘텐츠 -->
+    <div class="relative z-10 max-w-6xl mx-auto px-4 text-center">
+      <div class="animate-slide-up">
+        <!-- 메인 제목 -->
+        <h1 class="text-5xl md:text-7xl font-playful font-bold mb-6">
+          <span class="gradient-text">아이들의 꿈이</span><br>
+          <span class="text-deep-navy dark:text-white">자라는 곳</span>
+        </h1>
+        
+        <!-- 부제목 -->
+        <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed font-medium">
+          상상력과 창의력을 키우는 특별한 공간에서<br>
+          아이들의 무한한 가능성을 함께 발견해보세요
+        </p>
+        
+        <!-- CTA 버튼들 -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <div class="rainbow-border">
+            <div class="px-8 py-4">
+              <a href="#programs" class="text-lg font-semibold text-deep-navy dark:text-white hover:text-rainbow-blue transition-colors">
+                <i class="fas fa-play-circle mr-2"></i>
+                프로그램 둘러보기
+              </a>
+            </div>
+          </div>
+          
+          <button class="bg-rainbow-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-rainbow-green transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <i class="fas fa-phone mr-2"></i>
+            상담 신청하기
+          </button>
+        </div>
+        
+        <!-- 특징 아이콘들 -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div class="text-center animate-bounce-gentle">
+            <div class="w-16 h-16 bg-rainbow-red/20 rounded-full flex items-center justify-center mx-auto mb-3">
+              <i class="fas fa-heart text-2xl text-rainbow-red"></i>
+            </div>
+            <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">사랑가득</p>
+          </div>
+          
+          <div class="text-center animate-bounce-gentle" style="animation-delay: 0.2s;">
+            <div class="w-16 h-16 bg-rainbow-green/20 rounded-full flex items-center justify-center mx-auto mb-3">
+              <i class="fas fa-shield-alt text-2xl text-rainbow-green"></i>
+            </div>
+            <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">안전우선</p>
+          </div>
+          
+          <div class="text-center animate-bounce-gentle" style="animation-delay: 0.4s;">
+            <div class="w-16 h-16 bg-rainbow-yellow/20 rounded-full flex items-center justify-center mx-auto mb-3">
+              <i class="fas fa-lightbulb text-2xl text-rainbow-yellow"></i>
+            </div>
+            <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">창의교육</p>
+          </div>
+          
+          <div class="text-center animate-bounce-gentle" style="animation-delay: 0.6s;">
+            <div class="w-16 h-16 bg-rainbow-blue/20 rounded-full flex items-center justify-center mx-auto mb-3">
+              <i class="fas fa-users text-2xl text-rainbow-blue"></i>
+            </div>
+            <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">소통중심</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 스크롤 다운 표시 -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <i class="fas fa-chevron-down text-2xl text-gray-400"></i>
+    </div>
+  </section>
+
+  <!-- 🏫 소개 섹션 -->
+  <section id="about" class="py-24 relative section-fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-playful font-bold gradient-text mb-4">아이뜨락을 소개합니다</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          20년 경력의 전문 교사진과 함께하는 창의적이고 안전한 보육 환경
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- 텍스트 콘텐츠 -->
+        <div class="space-y-8">
+          <div class="rainbow-border">
+            <div class="p-6 dark:bg-gray-800">
+              <h3 class="text-2xl font-bold text-deep-navy dark:text-white mb-4">
+                <i class="fas fa-star text-rainbow-yellow mr-3"></i>
+                우리의 철학
+              </h3>
+              <p class="text-gray-600 dark:text-gray-200 leading-relaxed text-lg">
+                모든 아이는 고유한 재능과 가능성을 가지고 있습니다. 
+                우리는 아이들의 개성을 존중하며, 각자의 속도에 맞춰 성장할 수 있도록 돕습니다.
+              </p>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-2 gap-6">
+            <div class="text-center p-6 bg-white/50 dark:bg-gray-700/80 rounded-2xl glow-effect border dark:border-gray-600">
+              <div class="text-3xl font-bold text-rainbow-blue mb-2">
+                <span class="counter" data-target="150">0</span>+
+              </div>
+              <div class="text-sm text-gray-600 dark:text-gray-200 font-medium">졸업한 아이들</div>
+            </div>
+            <div class="text-center p-6 bg-white/50 dark:bg-gray-700/80 rounded-2xl glow-effect border dark:border-gray-600">
+              <div class="text-3xl font-bold text-rainbow-green mb-2">
+                <span class="counter" data-target="20">0</span>년
+              </div>
+              <div class="text-sm text-gray-600 dark:text-gray-200 font-medium">운영 경력</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 이미지 영역 -->
+        <div class="relative">
+          <div class="bg-gradient-to-br from-rainbow-blue/20 to-rainbow-purple/20 rounded-3xl p-8 h-96 flex items-center justify-center">
+            <div class="text-center">
+              <i class="fas fa-school text-6xl text-rainbow-blue mb-4"></i>
+              <h3 class="text-2xl font-bold text-deep-navy dark:text-white">아이뜨락 어린이집</h3>
+              <p class="text-gray-600 dark:text-gray-300 mt-2">꿈과 희망이 자라나는 곳</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🎨 프로그램 섹션 -->
+  <section id="programs" class="py-24 bg-gradient-to-br from-soft-gray to-white dark:from-gray-800 dark:to-gray-900 section-fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-playful font-bold gradient-text mb-4">특별한 프로그램</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          아이들의 전인적 성장을 위한 다양하고 창의적인 프로그램들
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 프로그램 카드 1 -->
+        <div class="card-3d">
+          <div class="card-3d-inner bg-white dark:bg-gray-800 dark:border dark:border-gray-600 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 card-hover">
+            <div class="w-16 h-16 bg-rainbow-red/20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-palette text-2xl text-rainbow-red"></i>
+            </div>
+            <h3 class="text-xl font-bold text-center text-deep-navy dark:text-white mb-4">창의미술</h3>
+            <p class="text-gray-600 dark:text-gray-200 text-center leading-relaxed">
+              다양한 재료와 기법을 통해 아이들의 창의력과 표현력을 기르는 프로그램
+            </p>
+          </div>
+        </div>
+        
+        <!-- 프로그램 카드 2 -->
+        <div class="card-3d">
+          <div class="card-3d-inner bg-white dark:bg-gray-800 dark:border dark:border-gray-600 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 card-hover">
+            <div class="w-16 h-16 bg-rainbow-green/20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-music text-2xl text-rainbow-green"></i>
+            </div>
+            <h3 class="text-xl font-bold text-center text-deep-navy dark:text-white mb-4">음악놀이</h3>
+            <p class="text-gray-600 dark:text-gray-200 text-center leading-relaxed">
+              노래와 악기를 통해 음감과 리듬감을 기르며 정서적 안정감을 제공
+            </p>
+          </div>
+        </div>
+        
+        <!-- 프로그램 카드 3 -->
+        <div class="card-3d">
+          <div class="card-3d-inner bg-white dark:bg-gray-800 dark:border dark:border-gray-600 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 card-hover">
+            <div class="w-16 h-16 bg-rainbow-blue/20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-running text-2xl text-rainbow-blue"></i>
+            </div>
+            <h3 class="text-xl font-bold text-center text-deep-navy dark:text-white mb-4">체육활동</h3>
+            <p class="text-gray-600 dark:text-gray-200 text-center leading-relaxed">
+              신체 발달과 협동심을 기르는 다양한 체육 프로그램과 운동
+            </p>
+          </div>
+        </div>
+        
+        <!-- 프로그램 카드 4 -->
+        <div class="card-3d">
+          <div class="card-3d-inner bg-white dark:bg-gray-800 dark:border dark:border-gray-600 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 card-hover">
+            <div class="w-16 h-16 bg-rainbow-yellow/20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-book text-2xl text-rainbow-yellow"></i>
+            </div>
+            <h3 class="text-xl font-bold text-center text-deep-navy dark:text-white mb-4">독서교육</h3>
+            <p class="text-gray-600 dark:text-gray-200 text-center leading-relaxed">
+              다양한 책을 통해 상상력과 언어 능력을 기르는 독서 프로그램
+            </p>
+          </div>
+        </div>
+        
+        <!-- 프로그램 카드 5 -->
+        <div class="card-3d">
+          <div class="card-3d-inner bg-white dark:bg-gray-800 dark:border dark:border-gray-600 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 card-hover">
+            <div class="w-16 h-16 bg-rainbow-purple/20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-seedling text-2xl text-rainbow-purple"></i>
+            </div>
+            <h3 class="text-xl font-bold text-center text-deep-navy dark:text-white mb-4">자연체험</h3>
+            <p class="text-gray-600 dark:text-gray-200 text-center leading-relaxed">
+              텃밭 가꾸기와 자연 관찰을 통해 생명의 소중함을 배우는 시간
+            </p>
+          </div>
+        </div>
+        
+        <!-- 프로그램 카드 6 -->
+        <div class="card-3d">
+          <div class="card-3d-inner bg-white dark:bg-gray-800 dark:border dark:border-gray-600 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 card-hover">
+            <div class="w-16 h-16 bg-rainbow-orange/20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-users text-2xl text-rainbow-orange"></i>
+            </div>
+            <h3 class="text-xl font-bold text-center text-deep-navy dark:text-white mb-4">사회성교육</h3>
+            <p class="text-gray-600 dark:text-gray-200 text-center leading-relaxed">
+              또래와의 협력과 배려를 통해 건전한 사회성을 기르는 프로그램
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📸 갤러리 섹션 -->
+  <section id="gallery" class="py-24 section-fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-playful font-bold gradient-text mb-4">아이들의 일상</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          즐겁고 행복한 우리 아이들의 모습을 담았습니다
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- 갤러리 아이템들 -->
+        <div class="aspect-square bg-gradient-to-br from-rainbow-red/20 to-rainbow-orange/20 rounded-2xl flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <i class="fas fa-camera text-4xl text-rainbow-red"></i>
+        </div>
+        <div class="aspect-square bg-gradient-to-br from-rainbow-green/20 to-rainbow-blue/20 rounded-2xl flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <i class="fas fa-paint-brush text-4xl text-rainbow-green"></i>
+        </div>
+        <div class="aspect-square bg-gradient-to-br from-rainbow-yellow/20 to-rainbow-orange/20 rounded-2xl flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <i class="fas fa-music text-4xl text-rainbow-yellow"></i>
+        </div>
+        <div class="aspect-square bg-gradient-to-br from-rainbow-purple/20 to-rainbow-blue/20 rounded-2xl flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <i class="fas fa-leaf text-4xl text-rainbow-purple"></i>
+        </div>
+        <div class="aspect-square bg-gradient-to-br from-rainbow-blue/20 to-rainbow-green/20 rounded-2xl flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <i class="fas fa-running text-4xl text-rainbow-blue"></i>
+        </div>
+        <div class="aspect-square bg-gradient-to-br from-rainbow-orange/20 to-rainbow-red/20 rounded-2xl flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <i class="fas fa-book-open text-4xl text-rainbow-orange"></i>
+        </div>
+        <div class="aspect-square bg-gradient-to-br from-rainbow-green/20 to-rainbow-yellow/20 rounded-2xl flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <i class="fas fa-puzzle-piece text-4xl text-rainbow-green"></i>
+        </div>
+        <div class="aspect-square bg-gradient-to-br from-rainbow-red/20 to-rainbow-purple/20 rounded-2xl flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <i class="fas fa-heart text-4xl text-rainbow-red"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📰 소식 섹션 -->
+  <section id="news" class="py-24 bg-gradient-to-br from-soft-gray to-white dark:from-gray-800 dark:to-gray-900 section-fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-playful font-bold gradient-text mb-4">최신 소식</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          어린이집의 새로운 소식과 이벤트를 전해드립니다
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- 소식 카드 1 -->
+        <div class="bg-white dark:bg-gray-800 dark:border dark:border-gray-600 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+          <div class="h-48 bg-gradient-to-br from-rainbow-blue/20 to-rainbow-purple/20 flex items-center justify-center">
+            <i class="fas fa-calendar-alt text-5xl text-rainbow-blue"></i>
+          </div>
+          <div class="p-6">
+            <div class="text-sm text-rainbow-blue font-medium mb-2">2024.10.15</div>
+            <h3 class="text-xl font-bold text-deep-navy dark:text-white mb-3">가을 운동회 개최</h3>
+            <p class="text-gray-600 dark:text-gray-200 text-sm leading-relaxed">
+              아이들과 가족이 함께하는 즐거운 가을 운동회가 열립니다. 많은 참여 부탁드립니다.
+            </p>
+          </div>
+        </div>
+        
+        <!-- 소식 카드 2 -->
+        <div class="bg-white dark:bg-gray-800 dark:border dark:border-gray-600 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+          <div class="h-48 bg-gradient-to-br from-rainbow-green/20 to-rainbow-yellow/20 flex items-center justify-center">
+            <i class="fas fa-apple-alt text-5xl text-rainbow-green"></i>
+          </div>
+          <div class="p-6">
+            <div class="text-sm text-rainbow-green font-medium mb-2">2024.10.10</div>
+            <h3 class="text-xl font-bold text-deep-navy dark:text-white mb-3">영양만점 급식 시작</h3>
+            <p class="text-gray-600 dark:text-gray-200 text-sm leading-relaxed">
+              새로운 영양사와 함께 더욱 건강하고 맛있는 급식 메뉴가 시작됩니다.
+            </p>
+          </div>
+        </div>
+        
+        <!-- 소식 카드 3 -->
+        <div class="bg-white dark:bg-gray-800 dark:border dark:border-gray-600 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+          <div class="h-48 bg-gradient-to-br from-rainbow-red/20 to-rainbow-orange/20 flex items-center justify-center">
+            <i class="fas fa-gift text-5xl text-rainbow-red"></i>
+          </div>
+          <div class="p-6">
+            <div class="text-sm text-rainbow-red font-medium mb-2">2024.10.05</div>
+            <h3 class="text-xl font-bold text-deep-navy dark:text-white mb-3">신입원생 모집</h3>
+            <p class="text-gray-600 dark:text-gray-200 text-sm leading-relaxed">
+              2025년 신입원생을 모집합니다. 상담 예약은 전화로 연락주세요.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📞 문의 섹션 -->
+  <section id="contact" class="py-24 section-fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-playful font-bold gradient-text mb-4">문의하기</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          궁금한 점이 있으시면 언제든지 연락주세요
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- 연락처 정보 -->
+        <div class="space-y-8">
+          <div class="rainbow-border">
+            <div class="p-8">
+              <h3 class="text-2xl font-bold text-deep-navy dark:text-white mb-6">연락처 정보</h3>
+              
+              <div class="space-y-6">
+                <div class="flex items-center">
+                  <div class="w-12 h-12 bg-rainbow-blue/20 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-phone text-rainbow-blue"></i>
+                  </div>
+                  <div>
+                    <div class="font-medium text-deep-navy dark:text-white text-lg">전화번호</div>
+                    <div class="text-gray-600 dark:text-gray-200 text-lg font-semibold">031-123-4567</div>
+                  </div>
+                </div>
+                
+                <div class="flex items-center">
+                  <div class="w-12 h-12 bg-rainbow-green/20 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-map-marker-alt text-rainbow-green"></i>
+                  </div>
+                  <div>
+                    <div class="font-medium text-deep-navy dark:text-white text-lg">주소</div>
+                    <div class="text-gray-600 dark:text-gray-200 text-lg font-semibold">수원시 영통구 아이뜨락로 123</div>
+                  </div>
+                </div>
+                
+                <div class="flex items-center">
+                  <div class="w-12 h-12 bg-rainbow-yellow/20 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-clock text-rainbow-yellow"></i>
+                  </div>
+                  <div>
+                    <div class="font-medium text-deep-navy dark:text-white text-lg">운영시간</div>
+                    <div class="text-gray-600 dark:text-gray-200 text-lg font-semibold">평일 07:30 - 19:30</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 문의 폼 -->
+        <div class="bg-white dark:bg-gray-800 dark:border dark:border-gray-600 rounded-3xl p-8 shadow-xl">
+          <h3 class="text-2xl font-bold text-deep-navy dark:text-white mb-6">상담 신청</h3>
+          
+          <form class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">이름</label>
+              <input type="text" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-rainbow-blue dark:bg-gray-700 dark:text-white" placeholder="이름을 입력하세요">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">연락처</label>
+              <input type="tel" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-rainbow-blue dark:bg-gray-700 dark:text-white" placeholder="연락처를 입력하세요">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">문의내용</label>
+              <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-rainbow-blue dark:bg-gray-700 dark:text-white" placeholder="문의하실 내용을 입력하세요"></textarea>
+            </div>
+            
+            <button type="submit" class="w-full bg-rainbow-blue text-white py-3 rounded-lg font-semibold hover:bg-rainbow-green transition-colors duration-300">
+              상담 신청하기
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌟 푸터 -->
+  <footer class="bg-deep-navy text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-2xl font-playful font-bold gradient-text mb-4">
+            <i class="fas fa-seedling mr-2"></i>
+            아이뜨락
+          </h3>
+          <p class="text-gray-300 leading-relaxed">
+            아이들의 꿈과 상상력이 자라는 특별한 공간에서 행복한 성장을 함께 만들어갑니다.
+          </p>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4">바로가기</h4>
+          <ul class="space-y-2">
+            <li><a href="#about" class="text-gray-300 hover:text-rainbow-blue transition-colors">소개</a></li>
+            <li><a href="#programs" class="text-gray-300 hover:text-rainbow-green transition-colors">프로그램</a></li>
+            <li><a href="#gallery" class="text-gray-300 hover:text-rainbow-yellow transition-colors">갤러리</a></li>
+            <li><a href="#contact" class="text-gray-300 hover:text-rainbow-red transition-colors">문의</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4">연락처</h4>
+          <div class="space-y-2 text-gray-200">
+            <div class="flex items-center">
+              <span class="text-rainbow-blue mr-2">📞</span>
+              <span class="font-medium">031-123-4567</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-rainbow-green mr-2">📍</span>
+              <span class="font-medium">수원시 영통구 아이뜨락로 123</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-rainbow-yellow mr-2">🕐</span>
+              <span class="font-medium">평일 07:30 - 19:30</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+        <p>&copy; 2024 아이뜨락 어린이집. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 플로팅 버튼 -->
+  <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+    <a href="tel:031-123-4567" class="w-14 h-14 bg-rainbow-blue text-white rounded-full flex items-center justify-center shadow-lg hover:bg-rainbow-green transition-all duration-300 transform hover:scale-110">
+      <i class="fas fa-phone text-lg"></i>
+    </a>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-14 h-14 bg-white text-rainbow-blue border-2 border-rainbow-blue rounded-full flex items-center justify-center shadow-lg hover:bg-rainbow-blue hover:text-white transition-all duration-300 transform hover:scale-110">
+      <i class="fas fa-arrow-up text-lg"></i>
+    </button>
+  </div>
+
+  <!-- 스크립트 -->
+  <script>
+    // 로딩 스크린
+    window.addEventListener('load', () => {
+      const loadingScreen = document.getElementById('loadingScreen');
+      setTimeout(() => {
+        loadingScreen.style.opacity = '0';
+        setTimeout(() => {
+          loadingScreen.style.display = 'none';
+        }, 500);
+      }, 1500);
+    });
+    
+    // 파티클 생성
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 50;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+    
+    // 스크롤 진행 바
+    function updateScrollProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.body.offsetHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      document.getElementById('scrollProgress').style.width = scrollPercent + '%';
+    }
+    
+    // 카운터 애니메이션
+    function animateCounters() {
+      const counters = document.querySelectorAll('.counter');
+      const speed = 200;
+      
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const inc = target / speed;
+          
+          if (count < target) {
+            counter.innerText = Math.ceil(count + inc);
+            setTimeout(updateCount, 1);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCount();
+      });
+    }
+    
+    // 다크모드 토글
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      themeIcon.className = isDark ? 'fas fa-sun text-deep-navy dark:text-white' : 'fas fa-moon text-deep-navy dark:text-white';
+      
+      // 다크모드 상태 저장
+      localStorage.setItem('darkMode', isDark);
+    });
+    
+    // 저장된 다크모드 상태 복원
+    const savedDarkMode = localStorage.getItem('darkMode');
+    if (savedDarkMode === 'true') {
+      document.documentElement.classList.add('dark');
+      themeIcon.className = 'fas fa-sun text-deep-navy dark:text-white';
+    }
+    
+    // 모바일 메뉴 토글
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      
+      // 햄버거 메뉴 아이콘 변경
+      const icon = mobileMenuToggle.querySelector('i');
+      if (mobileMenu.classList.contains('hidden')) {
+        icon.className = 'fas fa-bars text-deep-navy dark:text-white';
+      } else {
+        icon.className = 'fas fa-times text-deep-navy dark:text-white';
+      }
+    });
+    
+    // 모바일 메뉴 링크 클릭시 메뉴 닫기
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuToggle.querySelector('i').className = 'fas fa-bars text-deep-navy dark:text-white';
+      });
+    });
+    
+    // 스크롤 애니메이션
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          
+          // 카운터 애니메이션 트리거
+          if (entry.target.querySelector('.counter')) {
+            animateCounters();
+          }
+        }
+      });
+    }, observerOptions);
+    
+    // 페이지 로드시 초기화
+    document.addEventListener('DOMContentLoaded', () => {
+      createParticles();
+      
+      const animateElements = document.querySelectorAll('.section-fade-in');
+      animateElements.forEach(el => observer.observe(el));
+      
+      // 스크롤 이벤트
+      window.addEventListener('scroll', () => {
+        updateScrollProgress();
+        
+        // 네비게이션 배경 변화
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+          nav.classList.add('bg-white/90', 'dark:bg-gray-900/90');
+        } else {
+          nav.classList.remove('bg-white/90', 'dark:bg-gray-900/90');
+        }
+      });
+    });
+    
+    // 부드러운 스크롤
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // 플로팅 버튼 표시/숨김
+    const backToTopBtn = document.querySelector('[onclick="window.scrollTo({top: 0, behavior: \'smooth\'})"]');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.style.opacity = '1';
+        backToTopBtn.style.visibility = 'visible';
+      } else {
+        backToTopBtn.style.opacity = '0';
+        backToTopBtn.style.visibility = 'hidden';
+      }
+    });
+    
+    // 초기 플로팅 버튼 숨김
+    if (backToTopBtn) {
+      backToTopBtn.style.opacity = '0';
+      backToTopBtn.style.visibility = 'hidden';
+      backToTopBtn.style.transition = 'opacity 0.3s, visibility 0.3s';
+    }
+    
+    // 키보드 접근성
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        mobileMenuToggle.querySelector('i').className = 'fas fa-bars text-deep-navy dark:text-white';
+      }
+    });
+    
+    // 성능 최적화: 스크롤 이벤트 쓰로틀링
+    function throttle(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    }
+    
+    const throttledScroll = throttle(() => {
+      updateScrollProgress();
+    }, 16); // 60fps
+    
+    window.addEventListener('scroll', throttledScroll);
+  </script>
+</body>
+</html>

@@ -1,1205 +1,474 @@
-/* === 라이트/다크 테마 CSS 변수 및 클래스 정의 === */
-:root {
-  --color-bg: #fff;
-  --color-text: #222;
-  --color-primary: #ffb300;
-  --color-accent: #ff6b6b;
-  --color-card: #f8f9fa;
-}
+/* ═══════════════════════════════════════════════════
+   아이뜨락 어린이집 — Premium Design System
+   Scandinavian-inspired Warm Premium Aesthetic
+   ═══════════════════════════════════════════════════ */
 
-.theme-light {
-  --color-bg: #fff;
-  --color-text: #222;
-  --color-primary: #ffb300;
-  --color-accent: #ff6b6b;
-  --color-card: #f8f9fa;
-}
-
-.theme-dark {
-  --color-bg: #181c24;
-  --color-text: #f1f1f1;
-  --color-primary: #ffd600;
-  --color-accent: #ff8a65;
-  --color-card: #232a36;
-}
-
-body, html {
-  background: var(--color-bg);
-  color: var(--color-text);
-  transition: background 0.3s, color 0.3s;
-}
-
-.card, .testimonial-slide .bg-white {
-  background: var(--color-card) !important;
-  color: var(--color-text) !important;
-}
-
-.btn-primary, .btn-floating {
-  background: var(--color-primary) !important;
-  color: var(--color-bg) !important;
-  border-color: var(--color-primary) !important;
-}
-
-.text-accent {
-  color: var(--color-accent) !important;
-}
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* 불필요한 레거시 CSS(Tailwind로 대체된 부분) 삭제 및 주석 처리 */
-/* .container, .logo, .hero, .hero-container 등은 Tailwind 유틸리티로 대체됨 */
-
-.btn {
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-}
-
-.btn-primary {
-  background: #ff6b6b;
-  color: white;
-}
-
-.btn-primary:hover {
-  background: #ff5252;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.btn-secondary:hover {
-  background: white;
-  color: #667eea;
-  transform: translateY(-2px);
-}
-
-.hero-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.image-placeholder {
-  width: 400px;
-  height: 300px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.image-placeholder i {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  opacity: 0.7;
-}
-
-/* 특징 섹션 */
-.features {
-  padding: 80px 0;
-  background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(240, 242, 247, 0.95) 100%
-    ),
-    radial-gradient(
-      circle at 10% 20%,
-      rgba(102, 126, 234, 0.03) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(255, 107, 107, 0.03) 0%,
-      transparent 50%
-    );
-  position: relative;
-  overflow: hidden;
-}
-
-.features::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: radial-gradient(
-    circle at 1px 1px,
-    rgba(102, 126, 234, 0.1) 1px,
-    transparent 0
-  );
-  background-size: 20px 20px;
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.feature-card {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(248, 250, 255, 0.95) 100%
-  );
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  padding: 2.5rem 2rem;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.08);
-  border: 1px solid rgba(99, 102, 241, 0.05);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.feature-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(99, 102, 241, 0.02) 0%,
-    rgba(139, 92, 246, 0.02) 100%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-.feature-card:hover::before {
-  opacity: 1;
-}
-
-.feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.12);
-  border-color: rgba(99, 102, 241, 0.1);
-}
-
-.feature-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #ff6b6b, #ffa726);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 1.5rem;
-  color: white;
-  font-size: 2rem;
-}
-
-.feature-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.feature-card p {
-  color: #666;
-  line-height: 1.6;
-}
-
-/* 공통 섹션 스타일 */
-.section-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.section-header h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.section-header p {
-  font-size: 1.1rem;
-  color: #666;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* 소개 섹션 */
-.about {
-  padding: 80px 0;
-  background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(250, 251, 255, 1) 100%
-    ),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23667eea" opacity="0.02"/><circle cx="80" cy="80" r="1" fill="%23ff6b6b" opacity="0.02"/><circle cx="40" cy="60" r="1" fill="%23667eea" opacity="0.02"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
-  position: relative;
-}
-
-.about-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.about-item {
-  display: flex;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: #f8f9fa;
-  border-radius: 15px;
-  border-left: 4px solid #ff6b6b;
-}
-
-.about-icon {
-  width: 60px;
-  height: 60px;
-  background: #ff6b6b;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 1.5rem;
-  margin-right: 1.5rem;
-  flex-shrink: 0;
-}
-
-.about-info h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.about-info p {
-  color: #666;
-  line-height: 1.6;
-}
-
-/* 프로그램 섹션 */
-.programs {
-  padding: 80px 0;
-  background: linear-gradient(
-      135deg,
-      rgba(247, 250, 252, 1) 0%,
-      rgba(245, 247, 250, 1) 100%
-    ),
-    radial-gradient(
-      ellipse at top,
-      rgba(102, 126, 234, 0.05) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      ellipse at bottom,
-      rgba(255, 107, 107, 0.05) 0%,
-      transparent 50%
-    );
-  position: relative;
-}
-
-.programs::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: linear-gradient(
-      90deg,
-      rgba(102, 126, 234, 0.03) 1px,
-      transparent 1px
-    ),
-    linear-gradient(rgba(102, 126, 234, 0.03) 1px, transparent 1px);
-  background-size: 30px 30px;
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-.programs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.program-card {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.98) 0%,
-    rgba(250, 251, 255, 0.98) 100%
-  );
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  padding: 2.5rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(78, 205, 196, 0.08);
-  border: 1px solid rgba(78, 205, 196, 0.06);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.program-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(78, 205, 196, 0.03) 0%,
-    rgba(68, 160, 141, 0.03) 100%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-.program-card:hover::before {
-  opacity: 1;
-}
-
-.program-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(78, 205, 196, 0.12);
-  border-color: rgba(78, 205, 196, 0.1);
-}
-
-.program-icon {
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, #4ecdc4, #44a08d);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-}
-
-.program-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.program-card p {
-  color: #666;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.program-card ul {
-  list-style: none;
+/* ─── Base & Reset ─── */
+*, *::before, *::after {
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.program-card li {
-  padding: 0.5rem 0;
-  color: #666;
-  position: relative;
-  padding-left: 1.5rem;
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 5rem;
 }
 
-.program-card li:before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #4ecdc4;
-  font-weight: bold;
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* 선생님 섹션 */
-.teachers {
-  padding: 80px 0;
-  background: white;
+/* Hide custom cursor on touch devices */
+@media (hover: none) {
+  #cursorDot, #cursorRing {
+    display: none !important;
+  }
 }
 
-.teachers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+/* ─── Custom Selection ─── */
+::selection {
+  background: rgba(107, 138, 94, 0.25);
+  color: #2A2A2A;
 }
 
-.teacher-card {
-  background: linear-gradient(
-    135deg,
-    rgba(102, 126, 234, 0.95) 0%,
-    rgba(118, 75, 162, 0.95) 100%
-  );
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
-  color: white;
-  padding: 2.5rem;
-  border-radius: 15px;
-  text-align: center;
-  position: relative;
+::-moz-selection {
+  background: rgba(107, 138, 94, 0.25);
+  color: #2A2A2A;
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FEFCF9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B0B0B0;
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888888;
+}
+
+/* Firefox scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #B0B0B0 #FEFCF9;
+}
+
+/* ─── Loading Screen ─── */
+#loadingScreen {
+  will-change: opacity, visibility;
+}
+
+#loadingScreen.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ─── Scroll Progress ─── */
+#scrollProgress {
+  will-change: width;
+  transform-origin: left;
+}
+
+/* ─── Custom Cursor ─── */
+#cursorDot, #cursorRing {
+  will-change: transform;
+  transition: none;
+  pointer-events: none;
+}
+
+#cursorRing {
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+}
+
+body:has(a:hover) #cursorRing,
+body:has(button:hover) #cursorRing {
+  width: 3rem;
+  height: 3rem;
+  border-color: rgba(107, 138, 94, 0.5);
+}
+
+/* ─── Navigation ─── */
+#mainNav {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+#mainNav.scrolled {
+  background: rgba(254, 252, 249, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* Mobile hamburger animation */
+#hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(3px, 5px);
+  width: 100%;
+}
+
+#hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+#hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -8px);
+  width: 100%;
+}
+
+/* Mobile menu open state */
+#mobileMenu.open {
+  transform: translateX(0);
+}
+
+/* Nav link active state */
+.nav-link.active {
+  color: #2A2A2A;
+  background: rgba(0, 0, 0, 0.04);
+  font-weight: 600;
+}
+
+/* ─── Hero Section ─── */
+#hero .organic-shape {
+  mix-blend-mode: multiply;
+}
+
+/* ─── Counter Animation ─── */
+.counter {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── FAQ Accordion ─── */
+.faq-item.active {
+  border-color: #C9D6BF;
+  background: #F2F5F0;
+}
+
+.faq-item.active .faq-toggle i {
+  transform: rotate(45deg);
+  color: #6B8A5E;
+}
+
+.faq-content {
+  max-height: 0;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-item.active .faq-content {
+  display: block;
+  max-height: 300px;
+}
+
+/* ─── Swiper Customization ─── */
+.testimonial-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 99px;
   transition: all 0.3s ease;
+  opacity: 1;
 }
 
-.teacher-card::before {
-  content: "";
+.testimonial-swiper .swiper-pagination-bullet-active {
+  width: 32px;
+  background: #87A373;
+}
+
+/* ─── Form Focus States ─── */
+input:focus, select:focus, textarea:focus {
+  box-shadow: 0 0 0 4px rgba(107, 138, 94, 0.1);
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  accent-color: #6B8A5E;
+}
+
+/* ─── Success Modal ─── */
+#successModal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#successModal.show > div {
+  transform: scale(1);
+}
+
+/* ─── Scroll To Top Button ─── */
+#scrollTopBtn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ─── Animations ─── */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Smooth hover transforms */
+.group {
+  will-change: transform;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  #hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.15;
+  }
+}
+
+@media (max-width: 640px) {
+  #hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .floating-card {
+    display: none;
+  }
+}
+
+/* ─── Print Styles ─── */
+@media print {
+  #mainNav, 
+  #loadingScreen, 
+  #scrollProgress, 
+  #cursorDot, 
+  #cursorRing, 
+  .swiper-pagination,
+  #scrollTopBtn,
+  .fixed {
+    display: none !important;
+  }
+  
+  body {
+    color: #000 !important;
+    background: #fff !important;
+  }
+  
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* ─── Accessibility ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-float-slow,
+  .animate-float-medium,
+  .animate-float-fast,
+  .animate-morph,
+  .animate-marquee,
+  .animate-pulse-soft {
+    animation: none !important;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid #6B8A5E;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Skip link (for accessibility) */
+.skip-link {
   position: absolute;
-  top: 0;
+  top: -100%;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(
-      circle at 30% 30%,
-      rgba(255, 255, 255, 0.1) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 70% 70%,
-      rgba(255, 255, 255, 0.05) 0%,
-      transparent 50%
-    );
-  z-index: 0;
-  transition: opacity 0.3s ease;
+  padding: 1rem 2rem;
+  background: #2A2A2A;
+  color: white;
+  z-index: 10000;
+  font-weight: 600;
 }
 
-.teacher-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(102, 126, 234, 0.2);
+.skip-link:focus {
+  top: 0;
 }
 
-.teacher-card:hover::before {
-  opacity: 1.2;
+/* ─── Dark Mode ─── */
+html.dark body {
+  background-color: #1A1A1A;
+  color: #E7E7E7;
 }
 
-.teacher-image {
-  width: 100px;
-  height: 100px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 1.5rem;
-  font-size: 2.5rem;
+html.dark #mainNav.scrolled {
+  background: rgba(26, 26, 26, 0.85);
+  border-bottom-color: rgba(255, 255, 255, 0.05);
 }
 
-.teacher-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
+html.dark #mainNav .nav-link {
+  color: #B0B0B0;
 }
 
-.teacher-role {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  opacity: 0.9;
+html.dark #mainNav .nav-link:hover,
+html.dark #mainNav .nav-link.active {
+  color: #E7E7E7;
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.teacher-exp {
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+html.dark section.bg-white {
+  background-color: #1A1A1A;
+}
+
+html.dark section.bg-cream-50,
+html.dark section.bg-gradient-to-br {
+  background: #1A1A1A;
+}
+
+html.dark .bg-white {
+  background-color: #2A2A2A;
+}
+
+html.dark .bg-cream-50 {
+  background-color: #222222;
+}
+
+html.dark .text-charcoal-900 {
+  color: #E7E7E7;
+}
+
+html.dark .text-charcoal-800 {
+  color: #D1D1D1;
+}
+
+html.dark .text-charcoal-700 {
+  color: #B0B0B0;
+}
+
+html.dark .text-charcoal-600 {
+  color: #888888;
+}
+
+html.dark .text-charcoal-500 {
+  color: #888888;
+}
+
+html.dark .text-charcoal-400 {
+  color: #6D6D6D;
+}
+
+html.dark .border-charcoal-100 {
+  border-color: #3D3D3D;
+}
+
+html.dark .border-charcoal-200 {
+  border-color: #4F4F4F;
+}
+
+html.dark .bg-charcoal-50 {
+  background-color: #2A2A2A;
+}
+
+html.dark input, 
+html.dark select, 
+html.dark textarea {
+  background-color: #2A2A2A !important;
+  border-color: #3D3D3D !important;
+  color: #E7E7E7 !important;
+}
+
+html.dark .faq-item.active {
+  background: #2A2A2A;
+  border-color: #3D3D3D;
+}
+
+html.dark #mobileMenu {
+  background-color: #1A1A1A;
+}
+
+html.dark #loadingScreen {
+  background-color: #1A1A1A;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #4F4F4F;
+}
+
+html.dark ::selection {
+  background: rgba(107, 138, 94, 0.4);
+  color: #E7E7E7;
+}
+
+html.dark #themeIcon::before {
+  content: "\f185"; /* sun icon */
+}
+
+/* ─── Gradient Override for Dark ─── */
+html.dark .bg-gradient-to-br.from-sage-50,
+html.dark .bg-gradient-to-br.from-cream-50,
+html.dark .bg-gradient-to-br.from-ocean-50,
+html.dark .bg-gradient-to-br.from-terracotta-50,
+html.dark .bg-gradient-to-br.from-lavender-50,
+html.dark .bg-gradient-to-br.from-peach-50 {
+  background: #222222 !important;
+}
+
+/* Facility cards in dark mode */
+html.dark .bg-gradient-to-br.from-sage-100,
+html.dark .bg-gradient-to-br.from-ocean-100,
+html.dark .bg-gradient-to-br.from-terracotta-100,
+html.dark .bg-gradient-to-br.from-lavender-100,
+html.dark .bg-gradient-to-br.from-peach-100,
+html.dark .bg-gradient-to-br.from-cream-200 {
   opacity: 0.8;
 }
 
-.teacher-desc {
-  font-size: 0.9rem;
-  opacity: 0.7;
-  line-height: 1.5;
+/* ─── Utility Classes ─── */
+.text-balance {
+  text-wrap: balance;
 }
 
-/* 시설 섹션 */
-.facilities {
-  padding: 80px 0;
-  background: #f8f9fa;
-}
-
-.facilities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.facility-item {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.97) 0%,
-    rgba(255, 248, 243, 0.97) 100%
-  );
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  padding: 2.5rem;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(255, 167, 38, 0.08);
-  border: 1px solid rgba(255, 167, 38, 0.06);
-  transition: all 0.3s ease;
-  position: relative;
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.facility-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 167, 38, 0.02) 0%,
-    rgba(255, 112, 67, 0.02) 100%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-.facility-item:hover::before {
-  opacity: 1;
-}
-
-.facility-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(255, 167, 38, 0.12);
-  border-color: rgba(255, 167, 38, 0.1);
-}
-
-.facility-image {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #ffa726, #ff7043);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 1.5rem;
-  color: white;
-  font-size: 2rem;
-}
-
-.facility-item h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.facility-item p {
-  color: #666;
-  line-height: 1.6;
-}
-
-/* 하루일과 섹션 */
-.daily-schedule {
-  padding: 80px 0;
-  background: white;
-}
-
-.schedule-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.schedule-item {
-  display: flex;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: #f8f9fa;
-  border-radius: 15px;
-  border-left: 4px solid #ff6b6b;
-  transition: transform 0.3s ease;
-}
-
-.schedule-item:hover {
-  transform: translateX(10px);
-  background: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.schedule-time {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #ff6b6b;
-  min-width: 80px;
-  margin-right: 2rem;
-}
-
-.schedule-content h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.schedule-content p {
-  color: #666;
-  line-height: 1.5;
-}
-
-/* 후기 섹션 */
-.testimonials {
-  padding: 80px 0;
-  background: #f8f9fa;
-}
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-}
-
-.testimonial-card {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.96) 0%,
-    rgba(252, 250, 255, 0.96) 100%
-  );
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  padding: 2.5rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.08);
-  border: 1px solid rgba(139, 92, 246, 0.06);
-  position: relative;
-  transition: all 0.3s ease;
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.testimonial-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(139, 92, 246, 0.02) 0%,
-    rgba(99, 102, 241, 0.02) 100%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.testimonial-card:hover::after {
-  opacity: 1;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.12);
-  border-color: rgba(139, 92, 246, 0.1);
-}
-
-.testimonial-card::before {
-  content: '"';
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  font-size: 4rem;
-  color: #ff6b6b;
-  opacity: 0.3;
-}
-
-.stars {
-  display: flex;
-  margin-bottom: 1rem;
-  color: #ffd93d;
-}
-
-.testimonial-content p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 1.5rem;
-  font-style: italic;
-}
-
-.testimonial-author strong {
-  color: #333;
-  font-size: 1rem;
-}
-
-.testimonial-author span {
-  color: #666;
-  font-size: 0.9rem;
-  display: block;
-  margin-top: 0.25rem;
-}
-
-/* 문의 섹션 */
-.contact {
-  padding: 80px 0;
-  background: white;
-}
-
-.contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: #f8f9fa;
-  border-radius: 15px;
-}
-
-.contact-icon {
-  width: 60px;
-  height: 60px;
-  background: #ff6b6b;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 1.5rem;
-  margin-right: 1.5rem;
-  flex-shrink: 0;
-}
-
-.contact-details h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.contact-details p {
-  font-size: 1rem;
-  color: #333;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-
-.contact-details small {
-  color: #666;
-}
-
-.contact-form {
-  background: linear-gradient(
-    135deg,
-    rgba(248, 250, 252, 0.98) 0%,
-    rgba(241, 245, 249, 0.98) 100%
-  );
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  padding: 2.5rem;
-  border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.08);
-  border: 1px solid rgba(99, 102, 241, 0.05);
-  position: relative;
-  overflow: hidden;
-}
-
-.contact-form::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(
-      circle at 20% 20%,
-      rgba(99, 102, 241, 0.02) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(139, 92, 246, 0.02) 0%,
-      transparent 50%
-    );
-  pointer-events: none;
-  z-index: 0;
-}
-
-.contact-form h3 {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  color: #333;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  position: relative;
-  z-index: 1;
-}
-
-.form-group {
-  margin-bottom: 1rem;
-  position: relative;
-  z-index: 1;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #333;
-  font-weight: 500;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #ff6b6b;
-  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
-}
-
-.btn-full {
-  width: 100%;
-  justify-content: center;
-}
-
-/* 푸터 */
-.footer {
-  background: #333;
-  color: white;
-  padding: 60px 0 20px;
-}
-
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
-  margin-bottom: 2rem;
-}
-
-.footer-section h4 {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  color: white;
-}
-
-.footer-section ul {
-  list-style: none;
-}
-
-.footer-section ul li {
-  margin-bottom: 0.5rem;
-}
-
-.footer-section ul li a {
-  color: #ccc;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-  color: #ff6b6b;
-}
-
-.social-links {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.social-links a {
-  width: 40px;
-  height: 40px;
-  background: #555;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 1.2rem;
-  transition: background 0.3s ease;
-}
-
-.social-links a:hover {
-  background: #ff6b6b;
-}
-
-.footer-bottom {
-  border-top: 1px solid #555;
-  padding-top: 2rem;
-  text-align: center;
-  color: #ccc;
-}
-
-/* 플로팅 버튼 */
-.floating-buttons {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  z-index: 100;
-}
-
-.float-btn {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: none;
-  background: #ff6b6b;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
-  transition: all 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-}
-
-.float-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 25px rgba(255, 107, 107, 0.4);
-}
-
-.call-btn {
-  background: #4caf50;
-  box-shadow: 0 4px 20px rgba(76, 175, 80, 0.3);
-}
-
-.call-btn:hover {
-  box-shadow: 0 6px 25px rgba(76, 175, 80, 0.4);
-}
-
-/* 반응형 디자인 */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 10px;
-    max-width: 100%;
+/* Safe area padding for notched devices */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .fixed.bottom-6 {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 0.25rem);
   }
-
-  .nav-container {
-    padding: 0 10px;
-  }
-
-  .nav-menu {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .hero {
-    padding: 100px 0 60px;
-    min-height: 90vh;
-  }
-
-  .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2rem;
-    padding: 0 10px;
-    min-height: auto;
-  }
-
-  .hero-title {
-    font-size: 2.5rem;
-    line-height: 1.3;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .btn {
-    width: 100%;
-    max-width: 280px;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-  }
-
-  .about-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .contact-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .floating-buttons {
-    bottom: 1rem;
-    right: 1rem;
-  }
-
-  .float-btn {
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
-  }
-
-  .features-grid,
-  .programs-grid,
-  .teachers-grid,
-  .facilities-grid,
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
-  }
-
-  /* 이미지 플레이스홀더 모바일 최적화 */
-  .image-placeholder {
-    width: 100%;
-    max-width: 350px;
-    height: 250px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 8px;
-  }
-
-  .nav-container {
-    padding: 0 8px;
-  }
-
-  .hero {
-    padding: 80px 0 40px;
-    min-height: 85vh;
-  }
-
-  .hero-container {
-    padding: 0 8px;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-    line-height: 1.3;
-  }
-
-  .hero-subtitle {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  .section-header h2 {
-    font-size: 2rem;
-  }
-
-  .btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
-    max-width: 260px;
-  }
-
-  .feature-card,
-  .program-card,
-  .facility-item,
-  .testimonial-card {
-    padding: 1.5rem 1rem;
-    margin: 0 5px;
-  }
-
-  .contact-form {
-    padding: 1.5rem 1rem;
-    margin: 0 5px;
-  }
-
-  .image-placeholder {
-    width: 100%;
-    height: 200px;
-    padding: 1rem;
-  }
-
-  /* 모바일에서 폰트 크기 조정 */
-  .logo {
-    font-size: 1.3rem;
-  }
-
-  .logo i {
-    font-size: 1.5rem;
-  }
-}
-
-/* 애니메이션 */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.feature-card,
-.program-card,
-.teacher-card,
-.facility-item,
-.testimonial-card {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-/* 스크롤 부드러움 */
-html {
-  scroll-behavior: smooth;
 }
